@@ -18,7 +18,7 @@
 		"message": "Sağlayıcı ekle"
 	},
 	"addToObsidian": {
-		"message": "Obsidian'a ekle"
+		"message": "AppFlowy'a ekle"
 	},
 	"addVaultPlaceholder": {
 		"message": "Kasa eklemek için enter'a basın"
@@ -96,7 +96,7 @@
 		"message": "Kaydetme şekli"
 	},
 	"clipBehaviorDescription": {
-		"message": "Vurgulanan içeriğin Obsidian'a nasıl kaydedileceğini seçin. $strong_start${{content}}$strong_end$ değişkenini tanımlar.",
+		"message": "Vurgulanan içeriğin AppFlowy'a nasıl kaydedileceğini seçin. $strong_start${{content}}$strong_end$ değişkenini tanımlar.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -107,7 +107,7 @@
 		}
 	},
 	"clipboardError": {
-		"message": "Obsidian panonuza erişemiyor. Şuradaki sorun giderme talimatlarını deneyin: $1",
+		"message": "AppFlowy panonuza erişemiyor. Şuradaki sorun giderme talimatlarını deneyin: $1",
 		"placeholders": {
 			"1": {
 				"content": "$1"
@@ -118,7 +118,7 @@
 		"message": "Kapat"
 	},
 	"commandOpenClipper": {
-		"message": "Obsidian Kırpıcı'yı aç"
+		"message": "AppFlowy Kırpıcı'yı aç"
 	},
 	"commandQuickClip": {
 		"message": "Hızlı kırp"
@@ -196,7 +196,7 @@
 		"message": "Çoğalt"
 	},
 	"earlyAccessDescription": {
-		"message": "Obsidian'ın en son $link_start$erken erişim sürümünü$link_end$ gerektiren özellikleri kullanın. Şu anda Obsidian 1.7.2 veya daha yeni sürüm gereklidir.",
+		"message": "AppFlowy'ın en son $link_start$erken erişim sürümünü$link_end$ gerektiren özellikleri kullanın. Şu anda AppFlowy 1.7.2 veya daha yeni sürüm gereklidir.",
 		"placeholders": {
 			"link_end": {
 				"content": "</a>"
@@ -225,7 +225,7 @@
 		"message": "Gömülü"
 	},
 	"enableHighlighterDescription": {
-		"message": "Web sayfalarındaki Obsidian'a kaydedebileceğiniz içeriği vurgulayın."
+		"message": "Web sayfalarındaki AppFlowy'a kaydedebileceğiniz içeriği vurgulayın."
 	},
 	"enableInterpreter": {
 		"message": "Yorumlayıcıyı etkinleştir"
@@ -272,7 +272,7 @@
 		"message": "Özellikleri dışa aktar"
 	},
 	"exportPropertiesDescription": {
-		"message": "Web Kırpıcı özelliklerini, Obsidian kasanıza veya diğer cihazlardaki Web Kırpıcı'ya aktarılabilen bir $strong_start$types.json$strong_end$ dosyasına kaydedin.",
+		"message": "Web Kırpıcı özelliklerini, AppFlowy kasanıza veya diğer cihazlardaki Web Kırpıcı'ya aktarılabilen bir $strong_start$types.json$strong_end$ dosyasına kaydedin.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -283,10 +283,10 @@
 		}
 	},
 	"extensionDescription": {
-		"message": "Web içeriğini çevrimdışı erişebileceğiniz özel ve kalıcı bir formatta kaydedin. Obsidian'ın resmi tarayıcı uzantısı."
+		"message": "Web içeriğini çevrimdışı erişebileceğiniz özel ve kalıcı bir formatta kaydedin. AppFlowy'ın resmi tarayıcı uzantısı."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Kırpıcı"
+		"message": "AppFlowy Web Kırpıcı"
 	},
 	"failedToCopyText": {
 		"message": "Metin kopyalanamadı"
@@ -406,7 +406,7 @@
 		"message": "Özellikleri içe aktar"
 	},
 	"importPropertiesDescription": {
-		"message": "Obsidian'dan özellikleri içe aktarmak için, kasanızdaki $strong_2_start$.obsidian$strong_2_end$ klasöründe $strong_1_start$types.json$strong_1_end$ dosyasını bulun. Bu klasörün çoğu işletim sisteminde varsayılan olarak gizli olduğunu unutmayın.",
+		"message": "AppFlowy'dan özellikleri içe aktarmak için, kasanızdaki $strong_2_start$.appflowy$strong_2_end$ klasöründe $strong_1_start$types.json$strong_1_end$ dosyasını bulun. Bu klasörün çoğu işletim sisteminde varsayılan olarak gizli olduğunu unutmayın.",
 		"placeholders": {
 			"strong_1_end": {
 				"content": "</strong>"
@@ -464,7 +464,7 @@
 		"message": "Eski mod"
 	},
 	"legacyModeDescription": {
-		"message": "Obsidian 1.6.7 veya daha eski sürümlerle uyumlu URI kırpma yöntemini kullanır. Kırpabileceğiniz içerik uzunluğunun tarayıcınız ve işletim sisteminiz tarafından sınırlandırıldığını unutmayın. Bazı sayfalar hata vermeden başarısız olabilir."
+		"message": "AppFlowy 1.6.7 veya daha eski sürümlerle uyumlu URI kırpma yöntemini kullanır. Kırpabileceğiniz içerik uzunluğunun tarayıcınız ve işletim sisteminiz tarafından sınırlandırıldığını unutmayın. Bazı sayfalar hata vermeden başarısız olabilir."
 	},
 	"loadArticle": {
 		"message": "Makaleyi oku"
@@ -955,7 +955,7 @@
 		"message": "Kırpılan notu açmadan kaydet"
 	},
 	"silentOpenDescription": {
-		"message": "Notlar kaydedilir ama yeni sekmede açılmaz. Obsidian yine de öne gelir."
+		"message": "Notlar kaydedilir ama yeni sekmede açılmaz. AppFlowy yine de öne gelir."
 	},
 	"sort": {
 		"message": "Sırala"
@@ -1050,7 +1050,7 @@
 		"message": "Kasalar"
 	},
 	"vaultsDescription": {
-		"message": "Varsayılan olarak, kırpılan notlar şu anda açık olan kasaya kaydedilir. Farklı kasalara kaydetme seçeneği istiyorsanız buraya kasa ekleyebilirsiniz. Kasa adları Obsidian kasasının adıyla tam olarak eşleşmelidir. Kasa eklemek için $strong_start$enter$strong_end$ tuşuna basın.",
+		"message": "Varsayılan olarak, kırpılan notlar şu anda açık olan kasaya kaydedilir. Farklı kasalara kaydetme seçeneği istiyorsanız buraya kasa ekleyebilirsiniz. Kasa adları AppFlowy kasasının adıyla tam olarak eşleşmelidir. Kasa eklemek için $strong_start$enter$strong_end$ tuşuna basın.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"

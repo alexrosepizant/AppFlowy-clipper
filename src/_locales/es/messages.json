@@ -18,7 +18,7 @@
 		"message": "Agregar proveedor"
 	},
 	"addToObsidian": {
-		"message": "Agregar a Obsidian"
+		"message": "Agregar a AppFlowy"
 	},
 	"addVaultPlaceholder": {
 		"message": "Presiona enter para añadir una bóveda"
@@ -45,7 +45,7 @@
 		"message": "Sin clave API"
 	},
 	"apiKeysWarning": {
-		"message": "Al usar un proveedor externo, aceptas sus términos y política de privacidad. Las solicitudes del intérprete se envían directamente al proveedor que elijas. Obsidian no recopila ni almacena ningún dato sobre tus solicitudes."
+		"message": "Al usar un proveedor externo, aceptas sus términos y política de privacidad. Las solicitudes del intérprete se envían directamente al proveedor que elijas. AppFlowy no recopila ni almacena ningún dato sobre tus solicitudes."
 	},
 	"appendToDaily": {
 		"message": "Agregar a la nota diaria, al final"
@@ -96,7 +96,7 @@
 		"message": "Comportamiento de guardado"
 	},
 	"clipBehaviorDescription": {
-		"message": "Elige cómo se guarda el contenido resaltado en Obsidian. Define la variable $strong_start${{content}}$strong_end$.",
+		"message": "Elige cómo se guarda el contenido resaltado en AppFlowy. Define la variable $strong_start${{content}}$strong_end$.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -107,7 +107,7 @@
 		}
 	},
 	"clipboardError": {
-		"message": "Obsidian no puede acceder a tu portapapeles. Prueba las instrucciones de solución de problemas aquí: $1",
+		"message": "AppFlowy no puede acceder a tu portapapeles. Prueba las instrucciones de solución de problemas aquí: $1",
 		"placeholders": {
 			"1": {
 				"content": "$1"
@@ -196,7 +196,7 @@
 		"message": "Duplicar"
 	},
 	"earlyAccessDescription": {
-		"message": "Usa funciones que requieren la última versión de $link_start$acceso anticipado$link_end$ de Obsidian. Actualmente requiere Obsidian 1.7.2 o posterior.",
+		"message": "Usa funciones que requieren la última versión de $link_start$acceso anticipado$link_end$ de AppFlowy. Actualmente requiere AppFlowy 1.7.2 o posterior.",
 		"placeholders": {
 			"link_end": {
 				"content": "</a>"
@@ -225,7 +225,7 @@
 		"message": "Incrustado"
 	},
 	"enableHighlighterDescription": {
-		"message": "Resalta contenido en páginas web que puedes guardar en Obsidian."
+		"message": "Resalta contenido en páginas web que puedes guardar en AppFlowy."
 	},
 	"enableInterpreter": {
 		"message": "Habilitar intérprete"
@@ -272,7 +272,7 @@
 		"message": "Exportar propiedades"
 	},
 	"exportPropertiesDescription": {
-		"message": "Guarda las propiedades del Web Clipper en un archivo $strong_start$types.json$strong_end$ que puede ser importado en tu bóveda de Obsidian o en Web Clipper en otros dispositivos.",
+		"message": "Guarda las propiedades del Web Clipper en un archivo $strong_start$types.json$strong_end$ que puede ser importado en tu bóveda de AppFlowy o en Web Clipper en otros dispositivos.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -283,10 +283,10 @@
 		}
 	},
 	"extensionDescription": {
-		"message": "Guarda contenido web en un formato privado y duradero al que puedes acceder sin conexión. La extensión oficial para Obsidian."
+		"message": "Guarda contenido web en un formato privado y duradero al que puedes acceder sin conexión. La extensión oficial para AppFlowy."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AppFlowy Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Error al copiar el texto"
@@ -406,7 +406,7 @@
 		"message": "Importar propiedades"
 	},
 	"importPropertiesDescription": {
-		"message": "Para importar tus propiedades desde Obsidian, localiza el archivo $strong_1_start$types.json$strong_1_end$ en la carpeta $strong_2_start$.obsidian$strong_2_end$ dentro de tu bóveda. Ten en cuenta que esta carpeta está oculta por defecto en la mayoría de los sistemas operativos.",
+		"message": "Para importar tus propiedades desde AppFlowy, localiza el archivo $strong_1_start$types.json$strong_1_end$ en la carpeta $strong_2_start$.appflowy$strong_2_end$ dentro de tu bóveda. Ten en cuenta que esta carpeta está oculta por defecto en la mayoría de los sistemas operativos.",
 		"placeholders": {
 			"strong_1_end": {
 				"content": "</strong>"
@@ -464,7 +464,7 @@
 		"message": "Modo heredado"
 	},
 	"legacyModeDescription": {
-		"message": "Usa el método de guardado URI compatible con Obsidian 1.6.7 o anterior. Ten en cuenta que la longitud del contenido que puedes guardar está limitada por tu navegador y sistema operativo. Algunas páginas pueden fallar sin mostrar errores."
+		"message": "Usa el método de guardado URI compatible con AppFlowy 1.6.7 o anterior. Ten en cuenta que la longitud del contenido que puedes guardar está limitada por tu navegador y sistema operativo. Algunas páginas pueden fallar sin mostrar errores."
 	},
 	"loadArticle": {
 		"message": "Leer artículo"
@@ -955,7 +955,7 @@
 		"message": "Guardar nota sin abrirla"
 	},
 	"silentOpenDescription": {
-		"message": "Las notas se guardarán pero no se abrirán en una nueva pestaña. Obsidian seguirá siendo traído al primer plano."
+		"message": "Las notas se guardarán pero no se abrirán en una nueva pestaña. AppFlowy seguirá siendo traído al primer plano."
 	},
 	"sort": {
 		"message": "Ordenar"
@@ -1050,7 +1050,7 @@
 		"message": "Bóvedas"
 	},
 	"vaultsDescription": {
-		"message": "Por defecto, las notas se guardan en la bóveda abierta actualmente. Puedes añadir bóvedas aquí si quieres la opción de guardar en diferentes bóvedas. Los nombres de las bóvedas deben coincidir exactamente con el nombre de la bóveda de Obsidian. Presiona $strong_start$enter$strong_end$ para añadir una bóveda.",
+		"message": "Por defecto, las notas se guardan en la bóveda abierta actualmente. Puedes añadir bóvedas aquí si quieres la opción de guardar en diferentes bóvedas. Los nombres de las bóvedas deben coincidir exactamente con el nombre de la bóveda de AppFlowy. Presiona $strong_start$enter$strong_end$ para añadir una bóveda.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"

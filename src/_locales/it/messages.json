@@ -18,7 +18,7 @@
 		"message": "Aggiungi fornitore"
 	},
 	"addToObsidian": {
-		"message": "Aggiungi a Obsidian"
+		"message": "Aggiungi a AppFlowy"
 	},
 	"addVaultPlaceholder": {
 		"message": "Premi invio per aggiungere un vault"
@@ -45,7 +45,7 @@
 		"message": "Nessuna chiave API"
 	},
 	"apiKeysWarning": {
-		"message": "Utilizzando un fornitore esterno, accetti i loro termini e la loro politica sulla privacy. Le richieste dell'interprete vengono inviate direttamente al fornitore che scegli. Obsidian non raccoglie o memorizza alcun dato sulle tue richieste."
+		"message": "Utilizzando un fornitore esterno, accetti i loro termini e la loro politica sulla privacy. Le richieste dell'interprete vengono inviate direttamente al fornitore che scegli. AppFlowy non raccoglie o memorizza alcun dato sulle tue richieste."
 	},
 	"appendToDaily": {
 		"message": "Aggiungi alla nota giornaliera, in fondo"
@@ -96,7 +96,7 @@
 		"message": "Comportamento del clip"
 	},
 	"clipBehaviorDescription": {
-		"message": "Scegli come il contenuto evidenziato viene salvato in Obsidian. Definisce la variabile $strong_start${{content}}$strong_end$.",
+		"message": "Scegli come il contenuto evidenziato viene salvato in AppFlowy. Definisce la variabile $strong_start${{content}}$strong_end$.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -107,7 +107,7 @@
 		}
 	},
 	"clipboardError": {
-		"message": "Obsidian non riesce ad accedere agli appunti. Prova le istruzioni per la risoluzione dei problemi qui: $1",
+		"message": "AppFlowy non riesce ad accedere agli appunti. Prova le istruzioni per la risoluzione dei problemi qui: $1",
 		"placeholders": {
 			"1": {
 				"content": "$1"
@@ -196,7 +196,7 @@
 		"message": "Duplica"
 	},
 	"earlyAccessDescription": {
-		"message": "Utilizza funzioni che richiedono l'ultima $link_start$versione di accesso anticipato$link_end$ di Obsidian. Attualmente richiede Obsidian 1.7.2 o successivo.",
+		"message": "Utilizza funzioni che richiedono l'ultima $link_start$versione di accesso anticipato$link_end$ di AppFlowy. Attualmente richiede AppFlowy 1.7.2 o successivo.",
 		"placeholders": {
 			"link_end": {
 				"content": "</a>"
@@ -225,7 +225,7 @@
 		"message": "Incorporato"
 	},
 	"enableHighlighterDescription": {
-		"message": "Evidenzia il contenuto sulle pagine web che puoi salvare in Obsidian."
+		"message": "Evidenzia il contenuto sulle pagine web che puoi salvare in AppFlowy."
 	},
 	"enableInterpreter": {
 		"message": "Abilita interprete"
@@ -272,7 +272,7 @@
 		"message": "Esporta proprietà"
 	},
 	"exportPropertiesDescription": {
-		"message": "Salva le proprietà del Web Clipper in un file $strong_start$types.json$strong_end$ che può essere importato nel tuo vault Obsidian, o nel Web Clipper su altri dispositivi.",
+		"message": "Salva le proprietà del Web Clipper in un file $strong_start$types.json$strong_end$ che può essere importato nel tuo vault AppFlowy, o nel Web Clipper su altri dispositivi.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -283,10 +283,10 @@
 		}
 	},
 	"extensionDescription": {
-		"message": "Salva contenuti dal web in un formato privato e duraturo che puoi accedere offline. L'estensione del browser ufficiale per Obsidian."
+		"message": "Salva contenuti dal web in un formato privato e duraturo che puoi accedere offline. L'estensione del browser ufficiale per AppFlowy."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AppFlowy Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Impossibile copiare il testo"
@@ -406,7 +406,7 @@
 		"message": "Importa proprietà"
 	},
 	"importPropertiesDescription": {
-		"message": "Per importare le tue proprietà da Obsidian, individua il file $strong_1_start$types.json$strong_1_end$ nella cartella $strong_2_start$.obsidian$strong_2_end$ all'interno del tuo vault. Nota che questa cartella è nascosta di default sulla maggior parte dei sistemi operativi.",
+		"message": "Per importare le tue proprietà da AppFlowy, individua il file $strong_1_start$types.json$strong_1_end$ nella cartella $strong_2_start$.appflowy$strong_2_end$ all'interno del tuo vault. Nota che questa cartella è nascosta di default sulla maggior parte dei sistemi operativi.",
 		"placeholders": {
 			"strong_1_end": {
 				"content": "</strong>"
@@ -464,7 +464,7 @@
 		"message": "Modalità legacy"
 	},
 	"legacyModeDescription": {
-		"message": "Utilizza il metodo di clipping URI compatibile con Obsidian 1.6.7 o precedente. Nota che la lunghezza del contenuto che puoi ritagliare è limitata dal tuo browser e dal sistema operativo. Alcune pagine potrebbero fallire senza alcun errore."
+		"message": "Utilizza il metodo di clipping URI compatibile con AppFlowy 1.6.7 o precedente. Nota che la lunghezza del contenuto che puoi ritagliare è limitata dal tuo browser e dal sistema operativo. Alcune pagine potrebbero fallire senza alcun errore."
 	},
 	"loadArticle": {
 		"message": "Leggi articolo"
@@ -955,7 +955,7 @@
 		"message": "Salva la nota ritagliata senza aprirla"
 	},
 	"silentOpenDescription": {
-		"message": "Le note ritagliate verranno salvate ma non si apriranno in una nuova scheda. Obsidian sarà comunque portato in primo piano."
+		"message": "Le note ritagliate verranno salvate ma non si apriranno in una nuova scheda. AppFlowy sarà comunque portato in primo piano."
 	},
 	"sort": {
 		"message": "Ordina"
@@ -1050,7 +1050,7 @@
 		"message": "Vaults"
 	},
 	"vaultsDescription": {
-		"message": "Per impostazione predefinita, le note ritagliate vengono salvate nel vault attualmente aperto. Puoi aggiungere vault qui se desideri avere l'opzione di salvare in vault diversi. I nomi dei vault devono corrispondere esattamente al nome del vault Obsidian. Premi $strong_start$invio$strong_end$ per aggiungere un vault.",
+		"message": "Per impostazione predefinita, le note ritagliate vengono salvate nel vault attualmente aperto. Puoi aggiungere vault qui se desideri avere l'opzione di salvare in vault diversi. I nomi dei vault devono corrispondere esattamente al nome del vault AppFlowy. Premi $strong_start$invio$strong_end$ per aggiungere un vault.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"

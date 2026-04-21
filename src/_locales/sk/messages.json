@@ -18,7 +18,7 @@
 		"message": "Pridať poskytovateľa"
 	},
 	"addToObsidian": {
-		"message": "Pridať do Obsidianu"
+		"message": "Pridať do AppFlowyu"
 	},
 	"addVaultPlaceholder": {
 		"message": "Stlačte Enter na pridanie vaultu"
@@ -45,7 +45,7 @@
 		"message": "Chýba API kľúč"
 	},
 	"apiKeysWarning": {
-		"message": "Používaním externého poskytovateľa súhlasíte s jeho podmienkami a zásadami ochrany súkromia. Požiadavky tlmočníka sa odosielajú priamo poskytovateľovi, ktorého si vyberiete. Obsidian nezhromažďuje ani neukladá žiadne údaje o vašich požiadavkách."
+		"message": "Používaním externého poskytovateľa súhlasíte s jeho podmienkami a zásadami ochrany súkromia. Požiadavky tlmočníka sa odosielajú priamo poskytovateľovi, ktorého si vyberiete. AppFlowy nezhromažďuje ani neukladá žiadne údaje o vašich požiadavkách."
 	},
 	"appendToDaily": {
 		"message": "Pridať do dennej poznámky, na koniec"
@@ -96,7 +96,7 @@
 		"message": "Správanie výstrižku"
 	},
 	"clipBehaviorDescription": {
-		"message": "Vyberte, ako sa zvýraznený obsah ukladá do Obsidianu. Definuje premennú $strong_start${{content}}$strong_end$.",
+		"message": "Vyberte, ako sa zvýraznený obsah ukladá do AppFlowyu. Definuje premennú $strong_start${{content}}$strong_end$.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -107,7 +107,7 @@
 		}
 	},
 	"clipboardError": {
-		"message": "Obsidian nemá prístup k vašej schránke. Skúste pokyny na riešenie problémov tu: $1",
+		"message": "AppFlowy nemá prístup k vašej schránke. Skúste pokyny na riešenie problémov tu: $1",
 		"placeholders": {
 			"1": {
 				"content": "$1"
@@ -196,7 +196,7 @@
 		"message": "Duplikovať"
 	},
 	"earlyAccessDescription": {
-		"message": "Používajte funkcie, ktoré vyžadujú najnovšiu $link_start$verziu s predbežným prístupom$link_end$ Obsidianu. Aktuálne vyžaduje Obsidian 1.7.2 alebo novší.",
+		"message": "Používajte funkcie, ktoré vyžadujú najnovšiu $link_start$verziu s predbežným prístupom$link_end$ AppFlowyu. Aktuálne vyžaduje AppFlowy 1.7.2 alebo novší.",
 		"placeholders": {
 			"link_end": {
 				"content": "</a>"
@@ -225,7 +225,7 @@
 		"message": "Vložené"
 	},
 	"enableHighlighterDescription": {
-		"message": "Zvýrazňujte obsah na webových stránkach, ktorý môžete uložiť do Obsidianu."
+		"message": "Zvýrazňujte obsah na webových stránkach, ktorý môžete uložiť do AppFlowyu."
 	},
 	"enableInterpreter": {
 		"message": "Zapnúť tlmočníka"
@@ -272,7 +272,7 @@
 		"message": "Exportovať vlastnosti"
 	},
 	"exportPropertiesDescription": {
-		"message": "Uložiť vlastnosti Web Clippera do súboru $strong_start$types.json$strong_end$, ktorý možno importovať do vášho Obsidian vaultu alebo do Web Clippera na iných zariadeniach.",
+		"message": "Uložiť vlastnosti Web Clippera do súboru $strong_start$types.json$strong_end$, ktorý možno importovať do vášho AppFlowy vaultu alebo do Web Clippera na iných zariadeniach.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -283,10 +283,10 @@
 		}
 	},
 	"extensionDescription": {
-		"message": "Ukladajte obsah z webu v súkromnom a trvácnom formáte, ku ktorému máte prístup aj offline. Oficiálne rozšírenie prehliadača pre Obsidian."
+		"message": "Ukladajte obsah z webu v súkromnom a trvácnom formáte, ku ktorému máte prístup aj offline. Oficiálne rozšírenie prehliadača pre AppFlowy."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AppFlowy Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Nepodarilo sa skopírovať text"
@@ -406,7 +406,7 @@
 		"message": "Importovať vlastnosti"
 	},
 	"importPropertiesDescription": {
-		"message": "Ak chcete importovať vlastnosti z Obsidianu, nájdite súbor $strong_1_start$types.json$strong_1_end$ v priečinku $strong_2_start$.obsidian$strong_2_end$ vo vašom vaulte. Upozorňujeme, že tento priečinok je vo väčšine operačných systémov predvolene skrytý.",
+		"message": "Ak chcete importovať vlastnosti z AppFlowyu, nájdite súbor $strong_1_start$types.json$strong_1_end$ v priečinku $strong_2_start$.appflowy$strong_2_end$ vo vašom vaulte. Upozorňujeme, že tento priečinok je vo väčšine operačných systémov predvolene skrytý.",
 		"placeholders": {
 			"strong_1_end": {
 				"content": "</strong>"
@@ -464,7 +464,7 @@
 		"message": "Režim kompatibility"
 	},
 	"legacyModeDescription": {
-		"message": "Používa metódu orezávania cez URI kompatibilnú s Obsidianom 1.6.7 alebo starším. Upozorňujeme, že dĺžka obsahu, ktorý môžete uložiť, je obmedzená vaším prehliadačom a OS. Niektoré stránky môžu zlyhať bez akýchkoľvek chýb."
+		"message": "Používa metódu orezávania cez URI kompatibilnú s AppFlowyom 1.6.7 alebo starším. Upozorňujeme, že dĺžka obsahu, ktorý môžete uložiť, je obmedzená vaším prehliadačom a OS. Niektoré stránky môžu zlyhať bez akýchkoľvek chýb."
 	},
 	"loadArticle": {
 		"message": "Čítať článok"
@@ -955,7 +955,7 @@
 		"message": "Uložiť výstrižok bez jeho otvorenia"
 	},
 	"silentOpenDescription": {
-		"message": "Výstrižky sa uložia, ale neotvoria sa v novej karte. Obsidian sa aj tak presunie do popredia."
+		"message": "Výstrižky sa uložia, ale neotvoria sa v novej karte. AppFlowy sa aj tak presunie do popredia."
 	},
 	"sort": {
 		"message": "Zoradiť"
@@ -1050,7 +1050,7 @@
 		"message": "Vaulty"
 	},
 	"vaultsDescription": {
-		"message": "Predvolene sa výstrižky ukladajú do aktuálne otvoreného vaultu. Ak chcete mať možnosť ukladať do rôznych vaultov, môžete ich tu pridať. Názvy vaultov sa musia presne zhodovať s názvom Obsidian vaultu. Stlačte $strong_start$Enter$strong_end$ na pridanie vaultu.",
+		"message": "Predvolene sa výstrižky ukladajú do aktuálne otvoreného vaultu. Ak chcete mať možnosť ukladať do rôznych vaultov, môžete ich tu pridať. Názvy vaultov sa musia presne zhodovať s názvom AppFlowy vaultu. Stlačte $strong_start$Enter$strong_end$ na pridanie vaultu.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"

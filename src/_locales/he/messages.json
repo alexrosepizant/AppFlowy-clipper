@@ -18,7 +18,7 @@
 		"message": "הוסף ספק"
 	},
 	"addToObsidian": {
-		"message": "הוסף ל-Obsidian"
+		"message": "הוסף ל-AppFlowy"
 	},
 	"addVaultPlaceholder": {
 		"message": "לחץ/י Enter להוספת כספת"
@@ -45,7 +45,7 @@
 		"message": "חסר מפתח API"
 	},
 	"apiKeysWarning": {
-		"message": "השימוש בספק חיצוני מהווה הסכמה לתנאי השימוש ומדיניות הפרטיות שלהם. בקשות המתרגם נשלחות ישירות לספק שבחרת. Obsidian אינו אוסף או מאחסן מידע על הבקשות שלך."
+		"message": "השימוש בספק חיצוני מהווה הסכמה לתנאי השימוש ומדיניות הפרטיות שלהם. בקשות המתרגם נשלחות ישירות לספק שבחרת. AppFlowy אינו אוסף או מאחסן מידע על הבקשות שלך."
 	},
 	"appendToDaily": {
 		"message": "הוסף לרשימה היומית, בסוף"
@@ -96,7 +96,7 @@
 		"message": "אופן השמירה"
 	},
 	"clipBehaviorDescription": {
-		"message": "בחר כיצד התוכן הנבחר נשמר ל-Obsidian. מגדיר את המשתנה $strong_start${{content}}$strong_end$",
+		"message": "בחר כיצד התוכן הנבחר נשמר ל-AppFlowy. מגדיר את המשתנה $strong_start${{content}}$strong_end$",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -107,7 +107,7 @@
 		}
 	},
 	"clipboardError": {
-		"message": "ל-Obsidian אין אפשרות לגשת ללוח שלך. נסה את הוראות פתרון הבעיות כאן: $1",
+		"message": "ל-AppFlowy אין אפשרות לגשת ללוח שלך. נסה את הוראות פתרון הבעיות כאן: $1",
 		"placeholders": {
 			"1": {
 				"content": "$1"
@@ -196,7 +196,7 @@
 		"message": "שכפל"
 	},
 	"earlyAccessDescription": {
-		"message": "השתמש בתכונות הדורשות את $link_start$גרסת הגישה המוקדמת$link_end$ העדכנית ביותר של Obsidian. כרגע נדרש Obsidian 1.7.2 ומעלה.",
+		"message": "השתמש בתכונות הדורשות את $link_start$גרסת הגישה המוקדמת$link_end$ העדכנית ביותר של AppFlowy. כרגע נדרש AppFlowy 1.7.2 ומעלה.",
 		"placeholders": {
 			"link_end": {
 				"content": "</a>"
@@ -225,7 +225,7 @@
 		"message": "משולב"
 	},
 	"enableHighlighterDescription": {
-		"message": "סמן תוכן בדפי אינטרנט שניתן לשמור ב-Obsidian"
+		"message": "סמן תוכן בדפי אינטרנט שניתן לשמור ב-AppFlowy"
 	},
 	"enableInterpreter": {
 		"message": "הפעל מתרגם"
@@ -272,7 +272,7 @@
 		"message": "ייצא מאפיינים"
 	},
 	"exportPropertiesDescription": {
-		"message": "שמור את מאפייני Web Clipper לקובץ $strong_start$types.json$strong_end$ שניתן לייבא לכספת Obsidian שלך או ל-Web Clipper במכשירים אחרים",
+		"message": "שמור את מאפייני Web Clipper לקובץ $strong_start$types.json$strong_end$ שניתן לייבא לכספת AppFlowy שלך או ל-Web Clipper במכשירים אחרים",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -283,10 +283,10 @@
 		}
 	},
 	"extensionDescription": {
-		"message": "שמור תוכן מהאינטרנט בפורמט פרטי ובר-קיימא שניתן לגשת אליו במצב לא מקוון. הרחבת הדפדפן הרשמית של Obsidian."
+		"message": "שמור תוכן מהאינטרנט בפורמט פרטי ובר-קיימא שניתן לגשת אליו במצב לא מקוון. הרחבת הדפדפן הרשמית של AppFlowy."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AppFlowy Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "נכשל בהעתקת טקסט"
@@ -406,7 +406,7 @@
 		"message": "ייבא מאפיינים"
 	},
 	"importPropertiesDescription": {
-		"message": "כדי לייבא מאפיינים מ-Obsidian, מצא את הקובץ $strong_1_start$types.json$strong_1_end$ בתיקיית $strong_2_start$.obsidian$strong_2_end$ של הכספת שלך. תיקייה זו מוסתרת כברירת מחדל ברוב מערכות ההפעלה.",
+		"message": "כדי לייבא מאפיינים מ-AppFlowy, מצא את הקובץ $strong_1_start$types.json$strong_1_end$ בתיקיית $strong_2_start$.appflowy$strong_2_end$ של הכספת שלך. תיקייה זו מוסתרת כברירת מחדל ברוב מערכות ההפעלה.",
 		"placeholders": {
 			"strong_1_end": {
 				"content": "</strong>"
@@ -464,7 +464,7 @@
 		"message": "מצב מורשת"
 	},
 	"legacyModeDescription": {
-		"message": "שימוש בשיטת URI המתאימה ל-Obsidian 1.6.7 ומטה. שים/י לב שאורך התוכן מוגבל על ידי הדפדפן ומערכת ההפעלה. חלק מהדפים עלולים להיכשל ללא הודעת שגיאה."
+		"message": "שימוש בשיטת URI המתאימה ל-AppFlowy 1.6.7 ומטה. שים/י לב שאורך התוכן מוגבל על ידי הדפדפן ומערכת ההפעלה. חלק מהדפים עלולים להיכשל ללא הודעת שגיאה."
 	},
 	"loadArticle": {
 		"message": "קרא מאמר"
@@ -947,7 +947,7 @@
 		"message": "שמור פתקים מבלי לפתוח"
 	},
 	"silentOpenDescription": {
-		"message": "פתקים שנגזרו יישמרו אך לא ייפתחו בכרטיסייה חדשה. Obsidian עדיין יועבר לחזית."
+		"message": "פתקים שנגזרו יישמרו אך לא ייפתחו בכרטיסייה חדשה. AppFlowy עדיין יועבר לחזית."
 	},
 	"sort": {
 		"message": "מיון"
@@ -1042,7 +1042,7 @@
 		"message": "כספות"
 	},
 	"vaultsDescription": {
-		"message": "כברירת מחדל, פתקים שנגזרו נשמרים בכספת הפתוחה. תוכל/י להוסיף כספות כאן אם תרצה/י את האפשרות לשמור בכספות שונות. שם הכספת חייב להתאים בדיוק לשם כספת ה-Obsidian. לחץ/י $strong_start$enter$strong_end$ כדי להוסיף כספת.",
+		"message": "כברירת מחדל, פתקים שנגזרו נשמרים בכספת הפתוחה. תוכל/י להוסיף כספות כאן אם תרצה/י את האפשרות לשמור בכספות שונות. שם הכספת חייב להתאים בדיוק לשם כספת ה-AppFlowy. לחץ/י $strong_start$enter$strong_end$ כדי להוסיף כספת.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"

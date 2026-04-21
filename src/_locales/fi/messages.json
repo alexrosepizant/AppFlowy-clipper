@@ -18,7 +18,7 @@
 		"message": "Lisää palveluntarjoaja"
 	},
 	"addToObsidian": {
-		"message": "Lisää Obsidianiin"
+		"message": "Lisää AppFlowyiin"
 	},
 	"addVaultPlaceholder": {
 		"message": "Paina enter lisätäksesi holvin"
@@ -45,7 +45,7 @@
 		"message": "Ei API-avainta"
 	},
 	"apiKeysWarning": {
-		"message": "Käyttämällä ulkoista palveluntarjoajaa hyväksyt heidän käyttöehtonsa ja tietosuojakäytäntönsä. Tulkin pyynnöt lähetetään suoraan valitsemallesi palveluntarjoajalle. Obsidian ei kerää tai tallenna mitään tietoja pyynnöistäsi."
+		"message": "Käyttämällä ulkoista palveluntarjoajaa hyväksyt heidän käyttöehtonsa ja tietosuojakäytäntönsä. Tulkin pyynnöt lähetetään suoraan valitsemallesi palveluntarjoajalle. AppFlowy ei kerää tai tallenna mitään tietoja pyynnöistäsi."
 	},
 	"appendToDaily": {
 		"message": "Lisää päivittäiseen muistiinpanoon, loppuun"
@@ -96,7 +96,7 @@
 		"message": "Leikkauksen käyttäytyminen"
 	},
 	"clipBehaviorDescription": {
-		"message": "Valitse, miten valittu sisältö tallennetaan Obsidianiin. Määrittää muuttujan $strong_start${{content}}$strong_end$",
+		"message": "Valitse, miten valittu sisältö tallennetaan AppFlowyiin. Määrittää muuttujan $strong_start${{content}}$strong_end$",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -107,7 +107,7 @@
 		}
 	},
 	"clipboardError": {
-		"message": "Obsidian ei voi käyttää leikepöytääsi. Kokeile vianmääritysohjeita täällä: $1",
+		"message": "AppFlowy ei voi käyttää leikepöytääsi. Kokeile vianmääritysohjeita täällä: $1",
 		"placeholders": {
 			"1": {
 				"content": "$1"
@@ -196,7 +196,7 @@
 		"message": "Monista"
 	},
 	"earlyAccessDescription": {
-		"message": "Käytä ominaisuuksia, jotka vaativat uusimman $link_start$early access -version$link_end$ Obsidianista. Vaatii tällä hetkellä Obsidian 1.7.2 tai uudemman.",
+		"message": "Käytä ominaisuuksia, jotka vaativat uusimman $link_start$early access -version$link_end$ AppFlowyista. Vaatii tällä hetkellä AppFlowy 1.7.2 tai uudemman.",
 		"placeholders": {
 			"link_end": {
 				"content": "</a>"
@@ -225,7 +225,7 @@
 		"message": "Upotettu"
 	},
 	"enableHighlighterDescription": {
-		"message": "Korosta verkkosivujen sisältöä, jonka voit tallentaa Obsidianiin"
+		"message": "Korosta verkkosivujen sisältöä, jonka voit tallentaa AppFlowyiin"
 	},
 	"enableInterpreter": {
 		"message": "Ota tulkki käyttöön"
@@ -272,7 +272,7 @@
 		"message": "Vie ominaisuudet"
 	},
 	"exportPropertiesDescription": {
-		"message": "Tallenna Web Clipperin ominaisuudet $strong_start$types.json$strong_end$ -tiedostoon, jonka voit tuoda Obsidian-holviin tai Web Clipperiin muilla laitteilla",
+		"message": "Tallenna Web Clipperin ominaisuudet $strong_start$types.json$strong_end$ -tiedostoon, jonka voit tuoda AppFlowy-holviin tai Web Clipperiin muilla laitteilla",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -283,10 +283,10 @@
 		}
 	},
 	"extensionDescription": {
-		"message": "Tallenna verkkosisältöä yksityisessä ja kestävässä muodossa, jota voit käyttää offline-tilassa. Obsidianin virallinen selainlaajennus."
+		"message": "Tallenna verkkosisältöä yksityisessä ja kestävässä muodossa, jota voit käyttää offline-tilassa. AppFlowyin virallinen selainlaajennus."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AppFlowy Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Tekstin kopiointi epäonnistui"
@@ -406,7 +406,7 @@
 		"message": "Tuo ominaisuudet"
 	},
 	"importPropertiesDescription": {
-		"message": "Tuodaksesi ominaisuudet Obsidianista, etsi $strong_1_start$types.json$strong_1_end$ -tiedosto holvisi $strong_2_start$.obsidian$strong_2_end$ -kansiosta. Huomaa, että tämä kansio on oletuksena piilotettu useimmissa käyttöjärjestelmissä.",
+		"message": "Tuodaksesi ominaisuudet AppFlowyista, etsi $strong_1_start$types.json$strong_1_end$ -tiedosto holvisi $strong_2_start$.appflowy$strong_2_end$ -kansiosta. Huomaa, että tämä kansio on oletuksena piilotettu useimmissa käyttöjärjestelmissä.",
 		"placeholders": {
 			"strong_1_end": {
 				"content": "</strong>"
@@ -464,7 +464,7 @@
 		"message": "Yhteensopivuustila"
 	},
 	"legacyModeDescription": {
-		"message": "Käyttää URI-leikkausmenetelmää, joka on yhteensopiva Obsidian 1.6.7:n tai sitä aikaisempien versioiden kanssa. Huomaa, että selaimen ja käyttöjärjestelmän rajoittama leikattavan sisällön pituus. Jotkin sivut saattavat epäonnistua ilman virheitä."
+		"message": "Käyttää URI-leikkausmenetelmää, joka on yhteensopiva AppFlowy 1.6.7:n tai sitä aikaisempien versioiden kanssa. Huomaa, että selaimen ja käyttöjärjestelmän rajoittama leikattavan sisällön pituus. Jotkin sivut saattavat epäonnistua ilman virheitä."
 	},
 	"loadArticle": {
 		"message": "Lue artikkeli"
@@ -963,7 +963,7 @@
 		"message": "Tallenna leikatut muistiinpanot avaamatta"
 	},
 	"silentOpenDescription": {
-		"message": "Leikatut muistiinpanot tallennetaan mutta niitä ei avata uudessa välilehdessä. Obsidian tuodaan silti etualalle."
+		"message": "Leikatut muistiinpanot tallennetaan mutta niitä ei avata uudessa välilehdessä. AppFlowy tuodaan silti etualalle."
 	},
 	"sort": {
 		"message": "Lajittele"
@@ -1058,7 +1058,7 @@
 		"message": "Holvit"
 	},
 	"vaultsDescription": {
-		"message": "Oletuksena leikatut muistiinpanot tallennetaan avoinna olevaan holviin. Voit lisätä holveja täällä, jos haluat mahdollisuuden tallentaa eri holveihin. Holvin nimen täytyy vastata täsmälleen Obsidian-holvin nimeä. Paina $strong_start$enter$strong_end$ lisätäksesi holvin.",
+		"message": "Oletuksena leikatut muistiinpanot tallennetaan avoinna olevaan holviin. Voit lisätä holveja täällä, jos haluat mahdollisuuden tallentaa eri holveihin. Holvin nimen täytyy vastata täsmälleen AppFlowy-holvin nimeä. Paina $strong_start$enter$strong_end$ lisätäksesi holvin.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"

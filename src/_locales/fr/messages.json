@@ -21,7 +21,7 @@
 		"message": "Ajouter à AppFlowy"
 	},
 	"addToObsidian": {
-		"message": "Ajouter à Obsidian"
+		"message": "Ajouter à AppFlowy"
 	},
 	"addVaultPlaceholder": {
 		"message": "Appuyez sur entrée pour ajouter un coffre"
@@ -48,7 +48,7 @@
 		"message": "Pas de clé API"
 	},
 	"apiKeysWarning": {
-		"message": "En utilisant un fournisseur externe, vous acceptez leurs conditions d'utilisation et leur politique de confidentialité. Les requêtes de l'interpréteur sont envoyées directement au fournisseur que vous choisissez. Obsidian ne collecte et ne stocke aucune donnée concernant vos requêtes."
+		"message": "En utilisant un fournisseur externe, vous acceptez leurs conditions d'utilisation et leur politique de confidentialité. Les requêtes de l'interpréteur sont envoyées directement au fournisseur que vous choisissez. AppFlowy ne collecte et ne stocke aucune donnée concernant vos requêtes."
 	},
 	"appendToDaily": {
 		"message": "Ajouter à la note quotidienne, à la fin"
@@ -102,7 +102,7 @@
 		"message": "Comportement de sauvegarde"
 	},
 	"clipBehaviorDescription": {
-		"message": "Choisissez comment le contenu surligné est sauvegardé dans Obsidian. Définit la variable $strong_start${{content}}$strong_end$.",
+		"message": "Choisissez comment le contenu surligné est sauvegardé dans AppFlowy. Définit la variable $strong_start${{content}}$strong_end$.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -113,7 +113,7 @@
 		}
 	},
 	"clipboardError": {
-		"message": "Obsidian ne peut pas accéder à votre presse-papiers. Essayez les instructions de dépannage ici : $1",
+		"message": "AppFlowy ne peut pas accéder à votre presse-papiers. Essayez les instructions de dépannage ici : $1",
 		"placeholders": {
 			"1": {
 				"content": "$1"
@@ -202,7 +202,7 @@
 		"message": "Dupliquer"
 	},
 	"earlyAccessDescription": {
-		"message": "Utilisez des fonctionnalités qui nécessitent la dernière version $link_start$d'accès anticipé$link_end$ d'Obsidian. Nécessite actuellement Obsidian 1.7.2 ou ultérieur.",
+		"message": "Utilisez des fonctionnalités qui nécessitent la dernière version $link_start$d'accès anticipé$link_end$ d'AppFlowy. Nécessite actuellement AppFlowy 1.7.2 ou ultérieur.",
 		"placeholders": {
 			"link_end": {
 				"content": "</a>"
@@ -231,7 +231,7 @@
 		"message": "Intégré"
 	},
 	"enableHighlighterDescription": {
-		"message": "Surlignez du contenu sur les pages web que vous pouvez enrengistrer dans Obsidian."
+		"message": "Surlignez du contenu sur les pages web que vous pouvez enrengistrer dans AppFlowy."
 	},
 	"enableInterpreter": {
 		"message": "Activer l'interpréteur"
@@ -278,7 +278,7 @@
 		"message": "Exporter les propriétés"
 	},
 	"exportPropertiesDescription": {
-		"message": "Sauvegardez les propriétés du Web Clipper dans un fichier $strong_start$types.json$strong_end$ qui peut être importé dans votre coffre Obsidian ou dans Web Clipper sur d'autres appareils.",
+		"message": "Sauvegardez les propriétés du Web Clipper dans un fichier $strong_start$types.json$strong_end$ qui peut être importé dans votre coffre AppFlowy ou dans Web Clipper sur d'autres appareils.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -289,10 +289,10 @@
 		}
 	},
 	"extensionDescription": {
-		"message": "Sauvegardez du contenu web dans un format privé et durable accessible hors ligne. L'extension officielle pour Obsidian."
+		"message": "Sauvegardez du contenu web dans un format privé et durable accessible hors ligne. L'extension officielle pour AppFlowy."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AppFlowy Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Échec de la copie du texte"
@@ -412,7 +412,7 @@
 		"message": "Importer les propriétés"
 	},
 	"importPropertiesDescription": {
-		"message": "Pour importer vos propriétés depuis Obsidian, localisez le fichier $strong_1_start$types.json$strong_1_end$ dans le dossier $strong_2_start$.obsidian$strong_2_end$ de votre coffre. Notez que ce dossier est masqué par défaut sur la plupart des systèmes d'exploitation.",
+		"message": "Pour importer vos propriétés depuis AppFlowy, localisez le fichier $strong_1_start$types.json$strong_1_end$ dans le dossier $strong_2_start$.appflowy$strong_2_end$ de votre coffre. Notez que ce dossier est masqué par défaut sur la plupart des systèmes d'exploitation.",
 		"placeholders": {
 			"strong_1_end": {
 				"content": "</strong>"
@@ -470,7 +470,7 @@
 		"message": "Mode compatibilité"
 	},
 	"legacyModeDescription": {
-		"message": "Utilise la méthode d'enregistrement URI compatible avec Obsidian 1.6.7 ou antérieur. Notez que la longueur du contenu que vous pouvez enregistrer est limitée par votre navigateur et votre système d'exploitation. Certaines pages peuvent échouer sans erreur."
+		"message": "Utilise la méthode d'enregistrement URI compatible avec AppFlowy 1.6.7 ou antérieur. Notez que la longueur du contenu que vous pouvez enregistrer est limitée par votre navigateur et votre système d'exploitation. Certaines pages peuvent échouer sans erreur."
 	},
 	"loadArticle": {
 		"message": "Lire l’article"
@@ -961,7 +961,7 @@
 		"message": "Enregistrer la note sans l'ouvrir"
 	},
 	"silentOpenDescription": {
-		"message": "Les notes seront enregistrées mais ne s'ouvriront pas dans un nouvel onglet. Obsidian sera toujours amené au premier plan."
+		"message": "Les notes seront enregistrées mais ne s'ouvriront pas dans un nouvel onglet. AppFlowy sera toujours amené au premier plan."
 	},
 	"sort": {
 		"message": "Trier"
@@ -1056,7 +1056,7 @@
 		"message": "Coffres"
 	},
 	"vaultsDescription": {
-		"message": "Par défaut, les notes sont enregistrées dans le coffre actuellement ouvert. Vous pouvez ajouter des coffres ici si vous souhaitez pouvoir enregistrer dans différents coffres. Les noms des coffres doivent correspondre exactement au nom du coffre Obsidian. Appuyez sur $strong_start$entrée$strong_end$ pour ajouter un coffre.",
+		"message": "Par défaut, les notes sont enregistrées dans le coffre actuellement ouvert. Vous pouvez ajouter des coffres ici si vous souhaitez pouvoir enregistrer dans différents coffres. Les noms des coffres doivent correspondre exactement au nom du coffre AppFlowy. Appuyez sur $strong_start$entrée$strong_end$ pour ajouter un coffre.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"

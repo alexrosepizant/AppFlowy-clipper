@@ -18,7 +18,7 @@
 		"message": "Tilføj udbyder"
 	},
 	"addToObsidian": {
-		"message": "Tilføj til Obsidian"
+		"message": "Tilføj til AppFlowy"
 	},
 	"addVaultPlaceholder": {
 		"message": "Tryk Enter for at tilføje boks"
@@ -45,7 +45,7 @@
 		"message": "API-nøgle mangler"
 	},
 	"apiKeysWarning": {
-		"message": "Ved at bruge en ekstern udbyder accepterer du deres vilkår og betingelser samt privatlivspolitik. Fortolkerforespørgsler sendes direkte til din valgte udbyder. Obsidian indsamler eller gemmer ikke information om dine forespørgsler."
+		"message": "Ved at bruge en ekstern udbyder accepterer du deres vilkår og betingelser samt privatlivspolitik. Fortolkerforespørgsler sendes direkte til din valgte udbyder. AppFlowy indsamler eller gemmer ikke information om dine forespørgsler."
 	},
 	"appendToDaily": {
 		"message": "Tilføj til daglig note, i slutningen"
@@ -96,7 +96,7 @@
 		"message": "Klipningsopførsel"
 	},
 	"clipBehaviorDescription": {
-		"message": "Vælg hvordan det markerede indhold gemmes i Obsidian. Sætter variablen $strong_start${{content}}$strong_end$",
+		"message": "Vælg hvordan det markerede indhold gemmes i AppFlowy. Sætter variablen $strong_start${{content}}$strong_end$",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -107,7 +107,7 @@
 		}
 	},
 	"clipboardError": {
-		"message": "Obsidian kan ikke få adgang til din udklipsholder. Prøv fejlfindingsvejledningen her: $1",
+		"message": "AppFlowy kan ikke få adgang til din udklipsholder. Prøv fejlfindingsvejledningen her: $1",
 		"placeholders": {
 			"1": {
 				"content": "$1"
@@ -196,7 +196,7 @@
 		"message": "Duplikér"
 	},
 	"earlyAccessDescription": {
-		"message": "Brug funktioner der kræver den nyeste $link_start$tidlig adgang-version$link_end$ af Obsidian. Kræver i øjeblikket Obsidian 1.7.2 eller nyere.",
+		"message": "Brug funktioner der kræver den nyeste $link_start$tidlig adgang-version$link_end$ af AppFlowy. Kræver i øjeblikket AppFlowy 1.7.2 eller nyere.",
 		"placeholders": {
 			"link_end": {
 				"content": "</a>"
@@ -225,7 +225,7 @@
 		"message": "Indlejret"
 	},
 	"enableHighlighterDescription": {
-		"message": "Fremhæv indhold på websider for at gemme i Obsidian"
+		"message": "Fremhæv indhold på websider for at gemme i AppFlowy"
 	},
 	"enableInterpreter": {
 		"message": "Aktivér fortolker"
@@ -272,7 +272,7 @@
 		"message": "Eksportér egenskaber"
 	},
 	"exportPropertiesDescription": {
-		"message": "Gem Web Clipper-egenskaber til en $strong_start$types.json$strong_end$-fil, som kan importeres i din Obsidian-boks eller Web Clipper på andre enheder",
+		"message": "Gem Web Clipper-egenskaber til en $strong_start$types.json$strong_end$-fil, som kan importeres i din AppFlowy-boks eller Web Clipper på andre enheder",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -283,10 +283,10 @@
 		}
 	},
 	"extensionDescription": {
-		"message": "Gem webindhold i et privat og holdbart format, tilgængeligt offline. Den officielle browserudvidelse til Obsidian."
+		"message": "Gem webindhold i et privat og holdbart format, tilgængeligt offline. Den officielle browserudvidelse til AppFlowy."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AppFlowy Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Kunne ikke kopiere tekst"
@@ -406,7 +406,7 @@
 		"message": "Importér egenskaber"
 	},
 	"importPropertiesDescription": {
-		"message": "For at importere egenskaber fra Obsidian, find $strong_1_start$types.json$strong_1_end$-filen i $strong_2_start$.obsidian$strong_2_end$-mappen i din boks. Denne mappe er som standard skjult på de fleste operativsystemer.",
+		"message": "For at importere egenskaber fra AppFlowy, find $strong_1_start$types.json$strong_1_end$-filen i $strong_2_start$.appflowy$strong_2_end$-mappen i din boks. Denne mappe er som standard skjult på de fleste operativsystemer.",
 		"placeholders": {
 			"strong_1_end": {
 				"content": "</strong>"
@@ -464,7 +464,7 @@
 		"message": "Legacy-tilstand"
 	},
 	"legacyModeDescription": {
-		"message": "Bruger URI-indfangningsmetoden som er kompatibel med Obsidian 1.6.7 og ældre. Bemærk at længden af indfanget indhold er begrænset af browseren og operativsystemet. Nogle sider kan fejle uden fejlmeddelelse."
+		"message": "Bruger URI-indfangningsmetoden som er kompatibel med AppFlowy 1.6.7 og ældre. Bemærk at længden af indfanget indhold er begrænset af browseren og operativsystemet. Nogle sider kan fejle uden fejlmeddelelse."
 	},
 	"loadArticle": {
 		"message": "Læs artikel"
@@ -947,7 +947,7 @@
 		"message": "Gem noter uden at åbne dem"
 	},
 	"silentOpenDescription": {
-		"message": "Klippede noter vil blive gemt men ikke åbnet i en ny fane. Obsidian vil stadig blive bragt i forgrunden."
+		"message": "Klippede noter vil blive gemt men ikke åbnet i en ny fane. AppFlowy vil stadig blive bragt i forgrunden."
 	},
 	"sort": {
 		"message": "Sortér"
@@ -1042,7 +1042,7 @@
 		"message": "Bokse"
 	},
 	"vaultsDescription": {
-		"message": "Som standard gemmes klippede noter i den åbne boks. Du kan tilføje bokse her hvis du ønsker muligheden for at gemme i forskellige bokse. Boksnavnet skal matche præcist med Obsidian-boksnavnet. Tryk $strong_start$enter$strong_end$ for at tilføje en boks.",
+		"message": "Som standard gemmes klippede noter i den åbne boks. Du kan tilføje bokse her hvis du ønsker muligheden for at gemme i forskellige bokse. Boksnavnet skal matche præcist med AppFlowy-boksnavnet. Tryk $strong_start$enter$strong_end$ for at tilføje en boks.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"

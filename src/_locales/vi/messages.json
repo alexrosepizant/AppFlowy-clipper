@@ -18,7 +18,7 @@
 		"message": "Thêm nhà cung cấp"
 	},
 	"addToObsidian": {
-		"message": "Thêm vào Obsidian"
+		"message": "Thêm vào AppFlowy"
 	},
 	"addVaultPlaceholder": {
 		"message": "Nhấn enter để thêm kho lưu trữ"
@@ -45,7 +45,7 @@
 		"message": "Không có khóa API"
 	},
 	"apiKeysWarning": {
-		"message": "Bằng cách sử dụng nhà cung cấp bên ngoài, bạn đồng ý với điều khoản và chính sách bảo mật của họ. Các yêu cầu thông dịch được gửi trực tiếp đến nhà cung cấp bạn chọn. Obsidian không thu thập hoặc lưu trữ bất kỳ dữ liệu nào về các yêu cầu của bạn."
+		"message": "Bằng cách sử dụng nhà cung cấp bên ngoài, bạn đồng ý với điều khoản và chính sách bảo mật của họ. Các yêu cầu thông dịch được gửi trực tiếp đến nhà cung cấp bạn chọn. AppFlowy không thu thập hoặc lưu trữ bất kỳ dữ liệu nào về các yêu cầu của bạn."
 	},
 	"appendToDaily": {
 		"message": "Thêm vào ghi chú hàng ngày, ở cuối"
@@ -96,7 +96,7 @@
 		"message": "Hành vi lưu"
 	},
 	"clipBehaviorDescription": {
-		"message": "Chọn cách lưu nội dung đã đánh dấu vào Obsidian. Xác định biến $strong_start${{content}}$strong_end$.",
+		"message": "Chọn cách lưu nội dung đã đánh dấu vào AppFlowy. Xác định biến $strong_start${{content}}$strong_end$.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -107,7 +107,7 @@
 		}
 	},
 	"clipboardError": {
-		"message": "Obsidian không thể truy cập bảng tạm của bạn. Hãy thử làm theo hướng dẫn khắc phục sự cố tại đây: $1",
+		"message": "AppFlowy không thể truy cập bảng tạm của bạn. Hãy thử làm theo hướng dẫn khắc phục sự cố tại đây: $1",
 		"placeholders": {
 			"1": {
 				"content": "$1"
@@ -196,7 +196,7 @@
 		"message": "Nhân bản"
 	},
 	"earlyAccessDescription": {
-		"message": "Sử dụng các tính năng yêu cầu phiên bản $link_start$early access$link_end$ mới nhất của Obsidian. Hiện yêu cầu Obsidian 1.7.2 trở lên.",
+		"message": "Sử dụng các tính năng yêu cầu phiên bản $link_start$early access$link_end$ mới nhất của AppFlowy. Hiện yêu cầu AppFlowy 1.7.2 trở lên.",
 		"placeholders": {
 			"link_end": {
 				"content": "</a>"
@@ -225,7 +225,7 @@
 		"message": "Được nhúng"
 	},
 	"enableHighlighterDescription": {
-		"message": "Đánh dấu nội dung trên trang web mà bạn có thể lưu vào Obsidian."
+		"message": "Đánh dấu nội dung trên trang web mà bạn có thể lưu vào AppFlowy."
 	},
 	"enableInterpreter": {
 		"message": "Bật thông dịch"
@@ -272,7 +272,7 @@
 		"message": "Xuất thuộc tính"
 	},
 	"exportPropertiesDescription": {
-		"message": "Lưu thuộc tính Web Clipper vào tệp $strong_start$types.json$strong_end$ có thể được nhập vào kho lưu trữ Obsidian của bạn hoặc vào Web Clipper trên các thiết bị khác.",
+		"message": "Lưu thuộc tính Web Clipper vào tệp $strong_start$types.json$strong_end$ có thể được nhập vào kho lưu trữ AppFlowy của bạn hoặc vào Web Clipper trên các thiết bị khác.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -283,10 +283,10 @@
 		}
 	},
 	"extensionDescription": {
-		"message": "Lưu nội dung từ web trong định dạng riêng tư và bền vững mà bạn có thể truy cập ngoại tuyến. Tiện ích mở rộng trình duyệt chính thức cho Obsidian."
+		"message": "Lưu nội dung từ web trong định dạng riêng tư và bền vững mà bạn có thể truy cập ngoại tuyến. Tiện ích mở rộng trình duyệt chính thức cho AppFlowy."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AppFlowy Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Không thể sao chép văn bản"
@@ -406,7 +406,7 @@
 		"message": "Nhập thuộc tính"
 	},
 	"importPropertiesDescription": {
-		"message": "Để nhập thuộc tính từ Obsidian, hãy tìm tệp $strong_1_start$types.json$strong_1_end$ trong thư mục $strong_2_start$.obsidian$strong_2_end$ trong kho lưu trữ của bạn. Lưu ý rằng thư mục này được ẩn theo mặc định trên hầu hết các hệ điều hành.",
+		"message": "Để nhập thuộc tính từ AppFlowy, hãy tìm tệp $strong_1_start$types.json$strong_1_end$ trong thư mục $strong_2_start$.appflowy$strong_2_end$ trong kho lưu trữ của bạn. Lưu ý rằng thư mục này được ẩn theo mặc định trên hầu hết các hệ điều hành.",
 		"placeholders": {
 			"strong_1_end": {
 				"content": "</strong>"
@@ -464,7 +464,7 @@
 		"message": "Chế độ cũ"
 	},
 	"legacyModeDescription": {
-		"message": "Sử dụng phương thức lưu URI tương thích với Obsidian 1.6.7 hoặc cũ hơn. Lưu ý rằng độ dài nội dung bạn có thể lưu bị giới hạn bởi trình duyệt và hệ điều hành của bạn. Một số trang có thể thất bại mà không có thông báo lỗi."
+		"message": "Sử dụng phương thức lưu URI tương thích với AppFlowy 1.6.7 hoặc cũ hơn. Lưu ý rằng độ dài nội dung bạn có thể lưu bị giới hạn bởi trình duyệt và hệ điều hành của bạn. Một số trang có thể thất bại mà không có thông báo lỗi."
 	},
 	"loadArticle": {
 		"message": "Đọc bài viết"
@@ -955,7 +955,7 @@
 		"message": "Lưu ghi chú đã lưu mà không mở"
 	},
 	"silentOpenDescription": {
-		"message": "Ghi chú đã lưu sẽ được lưu nhưng không mở trong tab mới. Obsidian vẫn sẽ được đưa lên phía trước."
+		"message": "Ghi chú đã lưu sẽ được lưu nhưng không mở trong tab mới. AppFlowy vẫn sẽ được đưa lên phía trước."
 	},
 	"sort": {
 		"message": "Sắp xếp"
@@ -1050,7 +1050,7 @@
 		"message": "Kho lưu trữ"
 	},
 	"vaultsDescription": {
-		"message": "Theo mặc định, ghi chú đã lưu được lưu vào kho lưu trữ hiện đang mở. Bạn có thể thêm kho lưu trữ ở đây nếu muốn có tùy chọn lưu vào các kho lưu trữ khác nhau. Tên kho lưu trữ phải khớp chính xác với tên kho lưu trữ Obsidian. Nhấn $strong_start$enter$strong_end$ để thêm kho lưu trữ.",
+		"message": "Theo mặc định, ghi chú đã lưu được lưu vào kho lưu trữ hiện đang mở. Bạn có thể thêm kho lưu trữ ở đây nếu muốn có tùy chọn lưu vào các kho lưu trữ khác nhau. Tên kho lưu trữ phải khớp chính xác với tên kho lưu trữ AppFlowy. Nhấn $strong_start$enter$strong_end$ để thêm kho lưu trữ.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"

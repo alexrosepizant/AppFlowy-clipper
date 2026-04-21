@@ -18,7 +18,7 @@
 		"message": "Přidat poskytovatele"
 	},
 	"addToObsidian": {
-		"message": "Přidat do Obsidianu"
+		"message": "Přidat do AppFlowyu"
 	},
 	"addVaultPlaceholder": {
 		"message": "Stiskněte Enter pro přidání trezoru"
@@ -45,7 +45,7 @@
 		"message": "Chybí API klíč"
 	},
 	"apiKeysWarning": {
-		"message": "Používáním externího poskytovatele souhlasíte s jejich podmínkami a zásadami ochrany osobních údajů. Požadavky překladače jsou odesílány přímo vašemu vybranému poskytovateli. Obsidian neshromažďuje ani neukládá žádné informace o vašich požadavcích."
+		"message": "Používáním externího poskytovatele souhlasíte s jejich podmínkami a zásadami ochrany osobních údajů. Požadavky překladače jsou odesílány přímo vašemu vybranému poskytovateli. AppFlowy neshromažďuje ani neukládá žádné informace o vašich požadavcích."
 	},
 	"appendToDaily": {
 		"message": "Připojit k denní poznámce, na konec"
@@ -96,7 +96,7 @@
 		"message": "Způsob zachycení"
 	},
 	"clipBehaviorDescription": {
-		"message": "Vyberte, jak je zvýrazněný obsah uložen do Obsidian. Definuje proměnnou $strong_start${{content}}$strong_end$.",
+		"message": "Vyberte, jak je zvýrazněný obsah uložen do AppFlowy. Definuje proměnnou $strong_start${{content}}$strong_end$.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -107,7 +107,7 @@
 		}
 	},
 	"clipboardError": {
-		"message": "Obsidian nemá přístup k vaší schránce. Zkuste pokyny k řešení problémů zde: $1",
+		"message": "AppFlowy nemá přístup k vaší schránce. Zkuste pokyny k řešení problémů zde: $1",
 		"placeholders": {
 			"1": {
 				"content": "$1"
@@ -196,7 +196,7 @@
 		"message": "Duplikovat"
 	},
 	"earlyAccessDescription": {
-		"message": "Použijte funkce, které vyžadují nejnovější $link_start$verzi pro předčasný přístup$link_end$ Obsidian. Aktuálně vyžaduje Obsidian 1.7.2 nebo novější.",
+		"message": "Použijte funkce, které vyžadují nejnovější $link_start$verzi pro předčasný přístup$link_end$ AppFlowy. Aktuálně vyžaduje AppFlowy 1.7.2 nebo novější.",
 		"placeholders": {
 			"link_end": {
 				"content": "</a>"
@@ -225,7 +225,7 @@
 		"message": "Vložené"
 	},
 	"enableHighlighterDescription": {
-		"message": "Zvýrazněte obsah na webových stránkách, který můžete uložit do Obsidian."
+		"message": "Zvýrazněte obsah na webových stránkách, který můžete uložit do AppFlowy."
 	},
 	"enableInterpreter": {
 		"message": "Povolit překladač"
@@ -272,7 +272,7 @@
 		"message": "Exportovat vlastnosti"
 	},
 	"exportPropertiesDescription": {
-		"message": "Uložte vlastnosti Web Clipper do souboru $strong_start$types.json$strong_end$, který lze importovat do vašeho trezoru Obsidian nebo do Web Clipper na jiných zařízeních.",
+		"message": "Uložte vlastnosti Web Clipper do souboru $strong_start$types.json$strong_end$, který lze importovat do vašeho trezoru AppFlowy nebo do Web Clipper na jiných zařízeních.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -283,10 +283,10 @@
 		}
 	},
 	"extensionDescription": {
-		"message": "Uložte obsah z webu v soukromém a trvalém formátu, ke kterému máte přístup offline. Oficiální prohlížečové rozšíření pro Obsidian."
+		"message": "Uložte obsah z webu v soukromém a trvalém formátu, ke kterému máte přístup offline. Oficiální prohlížečové rozšíření pro AppFlowy."
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AppFlowy Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Nepodařilo se zkopírovat text"
@@ -406,7 +406,7 @@
 		"message": "Importovat vlastnosti"
 	},
 	"importPropertiesDescription": {
-		"message": "Pro import vlastností z Obsidianu najděte soubor $strong_1_start$types.json$strong_1_end$ ve složce $strong_2_start$.obsidian$strong_2_end$ vašeho trezoru. Tato složka je ve většině operačních systémů ve výchozím nastavení skrytá.",
+		"message": "Pro import vlastností z AppFlowyu najděte soubor $strong_1_start$types.json$strong_1_end$ ve složce $strong_2_start$.appflowy$strong_2_end$ vašeho trezoru. Tato složka je ve většině operačních systémů ve výchozím nastavení skrytá.",
 		"placeholders": {
 			"strong_1_end": {
 				"content": "</strong>"
@@ -464,7 +464,7 @@
 		"message": "Starší režim"
 	},
 	"legacyModeDescription": {
-		"message": "Používá metodu zachycení URI, která je kompatibilní s Obsidian 1.6.7 nebo starší. Vezměte na vědomí, že délka zachyceného obsahu je omezena prohlížečem a operačním systémem. Některé stránky mohou selhat bez chybové zprávy."
+		"message": "Používá metodu zachycení URI, která je kompatibilní s AppFlowy 1.6.7 nebo starší. Vezměte na vědomí, že délka zachyceného obsahu je omezena prohlížečem a operačním systémem. Některé stránky mohou selhat bez chybové zprávy."
 	},
 	"loadArticle": {
 		"message": "Přečíst článek"
@@ -947,7 +947,7 @@
 		"message": "Uložit poznámky bez otevření"
 	},
 	"silentOpenDescription": {
-		"message": "Zachycené poznámky budou uloženy, ale neotevřou se v nové kartě. Obsidian bude stále přesunut do popředí."
+		"message": "Zachycené poznámky budou uloženy, ale neotevřou se v nové kartě. AppFlowy bude stále přesunut do popředí."
 	},
 	"sort": {
 		"message": "Seřadit"
@@ -1042,7 +1042,7 @@
 		"message": "Trezory"
 	},
 	"vaultsDescription": {
-		"message": "Ve výchozím nastavení jsou vybrané poznámky ukládány do aktuálně otevřeného trezoru. Pokud chcete mít možnost ukládat do různých trezorů, můžete zde přidat trezory. Názvy trezorů musí přesně odpovídat názvu trezoru Obsidian. Stiskněte $strong_start$enter$strong_end$ pro přidání trezoru.",
+		"message": "Ve výchozím nastavení jsou vybrané poznámky ukládány do aktuálně otevřeného trezoru. Pokud chcete mít možnost ukládat do různých trezorů, můžete zde přidat trezory. Názvy trezorů musí přesně odpovídat názvu trezoru AppFlowy. Stiskněte $strong_start$enter$strong_end$ pro přidání trezoru.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"

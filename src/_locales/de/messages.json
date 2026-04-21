@@ -18,7 +18,7 @@
 		"message": "Anbieter hinzufügen"
 	},
 	"addToObsidian": {
-		"message": "Zu Obsidian hinzufügen"
+		"message": "Zu AppFlowy hinzufügen"
 	},
 	"addVaultPlaceholder": {
 		"message": "Drücke Enter, um einen Vault hinzuzufügen"
@@ -45,7 +45,7 @@
 		"message": "Kein API-Schlüssel"
 	},
 	"apiKeysWarning": {
-		"message": "Durch die Nutzung eines externen Anbieters stimmst du dessen Nutzungsbedingungen und Datenschutzrichtlinien zu. Interpreter-Anfragen werden direkt an den von Dir gewählten Anbieter gesendet. Obsidian sammelt und speichert keine Daten über Deine Anfragen."
+		"message": "Durch die Nutzung eines externen Anbieters stimmst du dessen Nutzungsbedingungen und Datenschutzrichtlinien zu. Interpreter-Anfragen werden direkt an den von Dir gewählten Anbieter gesendet. AppFlowy sammelt und speichert keine Daten über Deine Anfragen."
 	},
 	"appendToDaily": {
 		"message": "Zum Ende der Tagesnotiz hinzufügen"
@@ -96,7 +96,7 @@
 		"message": "Speicherverhalten"
 	},
 	"clipBehaviorDescription": {
-		"message": "Wähle wie markierter Inhalt in Obsidian gespeichert wird. Definiert die $strong_start${{content}}$strong_end$ Variable.",
+		"message": "Wähle wie markierter Inhalt in AppFlowy gespeichert wird. Definiert die $strong_start${{content}}$strong_end$ Variable.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -107,7 +107,7 @@
 		}
 	},
 	"clipboardError": {
-		"message": "Obsidian kann nicht auf deine Zwischenablage zugreifen. Probiere die Anweisungen zur Fehlerbehebung hier: $1",
+		"message": "AppFlowy kann nicht auf deine Zwischenablage zugreifen. Probiere die Anweisungen zur Fehlerbehebung hier: $1",
 		"placeholders": {
 			"1": {
 				"content": "$1"
@@ -118,7 +118,7 @@
 		"message": "Schließen"
 	},
 	"commandOpenClipper": {
-		"message": "Obsidian Web-Clipper öffnen"
+		"message": "AppFlowy Web-Clipper öffnen"
 	},
 	"commandQuickClip": {
 		"message": "Schnelles Ausschneiden"
@@ -196,7 +196,7 @@
 		"message": "Duplizieren"
 	},
 	"earlyAccessDescription": {
-		"message": "Verwende Funktionen, welche die neueste $link_start$Early Access Version$link_end$ von Obsidian erfordern. Erfordert derzeit Obsidian 1.7.2 oder höher.",
+		"message": "Verwende Funktionen, welche die neueste $link_start$Early Access Version$link_end$ von AppFlowy erfordern. Erfordert derzeit AppFlowy 1.7.2 oder höher.",
 		"placeholders": {
 			"link_end": {
 				"content": "</a>"
@@ -225,7 +225,7 @@
 		"message": "Eingebettet"
 	},
 	"enableHighlighterDescription": {
-		"message": "Hebe Inhalte auf Webseiten hervor, die Du in Obsidian speichern möchtest."
+		"message": "Hebe Inhalte auf Webseiten hervor, die Du in AppFlowy speichern möchtest."
 	},
 	"enableInterpreter": {
 		"message": "Interpreter aktivieren"
@@ -272,7 +272,7 @@
 		"message": "Eigenschaften exportieren"
 	},
 	"exportPropertiesDescription": {
-		"message": "Speichert Deine Web-Clipper Eigenschaften in einer $strong_start$types.json$strong_end$ Datei, die in Deinem Obsidian-Vault oder in Web-Clipper auf anderen Geräten importiert werden kann.",
+		"message": "Speichert Deine Web-Clipper Eigenschaften in einer $strong_start$types.json$strong_end$ Datei, die in Deinem AppFlowy-Vault oder in Web-Clipper auf anderen Geräten importiert werden kann.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -283,10 +283,10 @@
 		}
 	},
 	"extensionDescription": {
-		"message": "Speichet Deine Webinhalte in einem privaten und dauerhaften Format, auf das Du offline zugreifen kannst. Die offizielle Browser-Erweiterung für Obsidian."
+		"message": "Speichet Deine Webinhalte in einem privaten und dauerhaften Format, auf das Du offline zugreifen kannst. Die offizielle Browser-Erweiterung für AppFlowy."
 	},
 	"extensionName": {
-		"message": "Obsidian Web-Clipper"
+		"message": "AppFlowy Web-Clipper"
 	},
 	"failedToCopyText": {
 		"message": "Text konnte nicht kopiert werden"
@@ -406,7 +406,7 @@
 		"message": "Eigenschaften importieren"
 	},
 	"importPropertiesDescription": {
-		"message": "Um Deine Eigenschaften aus Obsidian zu importieren, suche die $strong_1_start$types.json$strong_1_end$ Datei im $strong_2_start$.obsidian$strong_2_end$ Ordner in Deinem Vault. Beachte, dass dieser Ordner standardmäßig auf den meisten Betriebssystemen versteckt ist.",
+		"message": "Um Deine Eigenschaften aus AppFlowy zu importieren, suche die $strong_1_start$types.json$strong_1_end$ Datei im $strong_2_start$.appflowy$strong_2_end$ Ordner in Deinem Vault. Beachte, dass dieser Ordner standardmäßig auf den meisten Betriebssystemen versteckt ist.",
 		"placeholders": {
 			"strong_1_end": {
 				"content": "</strong>"
@@ -464,7 +464,7 @@
 		"message": "Legacy-Modus"
 	},
 	"legacyModeDescription": {
-		"message": "Verwendet die URI-Ausschneidemethode, die mit Obsidian 1.6.7 oder älter kompatibel ist. Beachte, dass die Länge des Inhalts, den Du ausschneiden kannst, durch Deinen Browser und das Betriebssystem begrenzt ist. Einige Seiten können ohne Fehlermeldungen fehlschlagen."
+		"message": "Verwendet die URI-Ausschneidemethode, die mit AppFlowy 1.6.7 oder älter kompatibel ist. Beachte, dass die Länge des Inhalts, den Du ausschneiden kannst, durch Deinen Browser und das Betriebssystem begrenzt ist. Einige Seiten können ohne Fehlermeldungen fehlschlagen."
 	},
 	"loadArticle": {
 		"message": "Artikel lesen"
@@ -955,7 +955,7 @@
 		"message": "Ausgeschnittene Notiz ohne öffnen speichern"
 	},
 	"silentOpenDescription": {
-		"message": "Ausgeschnittene Notizen werden gespeichert, aber nicht in einem neuen Tab geöffnet. Obsidian wird trotzdem in den Vordergrund gebracht."
+		"message": "Ausgeschnittene Notizen werden gespeichert, aber nicht in einem neuen Tab geöffnet. AppFlowy wird trotzdem in den Vordergrund gebracht."
 	},
 	"sort": {
 		"message": "Sortieren"
@@ -1050,7 +1050,7 @@
 		"message": "Vaults"
 	},
 	"vaultsDescription": {
-		"message": "Standardmäßig werden ausgeschnittene Notizen im aktuell geöffneten Vault gespeichert. Du kannst hier Vaults hinzufügen, wenn Du die Option haben möchtest, in verschiedenen Vaults zu speichern. Vaultnamen müssen exakt mit dem Namen des Obsidian-Vaults übereinstimmen. Drücke $strong_start$Enter$strong_end$, um einen Vault hinzuzufügen.",
+		"message": "Standardmäßig werden ausgeschnittene Notizen im aktuell geöffneten Vault gespeichert. Du kannst hier Vaults hinzufügen, wenn Du die Option haben möchtest, in verschiedenen Vaults zu speichern. Vaultnamen müssen exakt mit dem Namen des AppFlowy-Vaults übereinstimmen. Drücke $strong_start$Enter$strong_end$, um einen Vault hinzuzufügen.",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"

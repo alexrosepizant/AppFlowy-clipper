@@ -18,7 +18,7 @@
 		"message": "បន្ថែមអ្នកផ្តល់សេវា"
 	},
 	"addToObsidian": {
-		"message": "បន្ថែមទៅ Obsidian"
+		"message": "បន្ថែមទៅ AppFlowy"
 	},
 	"addVaultPlaceholder": {
 		"message": "ចុច Enter ដើម្បីបន្ថែម Vault"
@@ -45,7 +45,7 @@
 		"message": "គ្មានសោ API"
 	},
 	"apiKeysWarning": {
-		"message": "ដោយប្រើអ្នកផ្តល់សេវាខាងក្រៅ អ្នកយល់ព្រមតាមលក្ខខណ្ឌ និងគោលការណ៍ឯកជនភាពរបស់ពួកគេ។ សំណើ Interpreter ត្រូវបានផ្ញើដោយផ្ទាល់ទៅកាន់អ្នកផ្តល់សេវាដែលអ្នកជ្រើសរើស។ Obsidian មិនប្រមូល ឬរក្សាទុកទិន្នន័យណាមួយអំពីសំណើរបស់អ្នកទេ។"
+		"message": "ដោយប្រើអ្នកផ្តល់សេវាខាងក្រៅ អ្នកយល់ព្រមតាមលក្ខខណ្ឌ និងគោលការណ៍ឯកជនភាពរបស់ពួកគេ។ សំណើ Interpreter ត្រូវបានផ្ញើដោយផ្ទាល់ទៅកាន់អ្នកផ្តល់សេវាដែលអ្នកជ្រើសរើស។ AppFlowy មិនប្រមូល ឬរក្សាទុកទិន្នន័យណាមួយអំពីសំណើរបស់អ្នកទេ។"
 	},
 	"appendToDaily": {
 		"message": "បន្ថែមទៅកំណត់ត្រាប្រចាំថ្ងៃ នៅខាងក្រោម"
@@ -96,7 +96,7 @@
 		"message": "ឥរិយាបថការកាត់យក"
 	},
 	"clipBehaviorDescription": {
-		"message": "ជ្រើសរើសរបៀបដែលមាតិកាដែលបានរំលេចត្រូវបានរក្សាទុកទៅ Obsidian។ កំណត់អថេរ $strong_start${{content}}$strong_end$។",
+		"message": "ជ្រើសរើសរបៀបដែលមាតិកាដែលបានរំលេចត្រូវបានរក្សាទុកទៅ AppFlowy។ កំណត់អថេរ $strong_start${{content}}$strong_end$។",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -107,7 +107,7 @@
 		}
 	},
 	"clipboardError": {
-		"message": "Obsidian មិនអាចចូលប្រើក្តារតម្បៀតខ្ទាស់របស់អ្នកបានទេ។ សាកល្បងការណែនាំដោះស្រាយបញ្ហានៅទីនេះ៖ $1",
+		"message": "AppFlowy មិនអាចចូលប្រើក្តារតម្បៀតខ្ទាស់របស់អ្នកបានទេ។ សាកល្បងការណែនាំដោះស្រាយបញ្ហានៅទីនេះ៖ $1",
 		"placeholders": {
 			"1": {
 				"content": "$1"
@@ -196,7 +196,7 @@
 		"message": "ចម្លងទ្វេ"
 	},
 	"earlyAccessDescription": {
-		"message": "ប្រើមុខងារដែលត្រូវការកំណែ $link_start$early access version$link_end$ ចុងក្រោយបំផុតរបស់ Obsidian។ បច្ចុប្បន្នត្រូវការ Obsidian 1.7.2 ឬថ្មីជាងនេះ។",
+		"message": "ប្រើមុខងារដែលត្រូវការកំណែ $link_start$early access version$link_end$ ចុងក្រោយបំផុតរបស់ AppFlowy។ បច្ចុប្បន្នត្រូវការ AppFlowy 1.7.2 ឬថ្មីជាងនេះ។",
 		"placeholders": {
 			"link_end": {
 				"content": "</a>"
@@ -225,7 +225,7 @@
 		"message": "បង្កប់"
 	},
 	"enableHighlighterDescription": {
-		"message": "រំលេចមាតិកានៅលើទំព័របណ្ដាញ ដែលអ្នកអាចរក្សាទុកទៅ Obsidian។"
+		"message": "រំលេចមាតិកានៅលើទំព័របណ្ដាញ ដែលអ្នកអាចរក្សាទុកទៅ AppFlowy។"
 	},
 	"enableInterpreter": {
 		"message": "បើក Interpreter"
@@ -272,7 +272,7 @@
 		"message": "នាំចេញលក្ខណៈសម្បត្តិ"
 	},
 	"exportPropertiesDescription": {
-		"message": "រក្សាទុកលក្ខណៈសម្បត្តិ Web Clipper ទៅឯកសារ $strong_start$types.json$strong_end$ ដែលអាចនាំចូលទៅក្នុង vault របស់ Obsidian របស់អ្នក ឬទៅក្នុង Web Clipper លើឧបករណ៍ផ្សេងៗ។",
+		"message": "រក្សាទុកលក្ខណៈសម្បត្តិ Web Clipper ទៅឯកសារ $strong_start$types.json$strong_end$ ដែលអាចនាំចូលទៅក្នុង vault របស់ AppFlowy របស់អ្នក ឬទៅក្នុង Web Clipper លើឧបករណ៍ផ្សេងៗ។",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -283,10 +283,10 @@
 		}
 	},
 	"extensionDescription": {
-		"message": "រក្សាទុកមាតិកាពីបណ្ដាញក្នុងទម្រង់ឯកជន និងប្រើបានយូរ ដែលអ្នកអាចចូលប្រើក្រៅបណ្ដាញបាន។ ផ្នែកបន្ថែមកម្មវិធីរុករកផ្លូវការរបស់ Obsidian។"
+		"message": "រក្សាទុកមាតិកាពីបណ្ដាញក្នុងទម្រង់ឯកជន និងប្រើបានយូរ ដែលអ្នកអាចចូលប្រើក្រៅបណ្ដាញបាន។ ផ្នែកបន្ថែមកម្មវិធីរុករកផ្លូវការរបស់ AppFlowy។"
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AppFlowy Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "បានបរាជ័យក្នុងការចម្លងអត្ថបទ"
@@ -406,7 +406,7 @@
 		"message": "នាំចូលលក្ខណៈសម្បត្តិ"
 	},
 	"importPropertiesDescription": {
-		"message": "ដើម្បីនាំចូលលក្ខណៈសម្បត្តិរបស់អ្នកពី Obsidian សូមស្វែងរកឯកសារ $strong_1_start$types.json$strong_1_end$ នៅក្នុងថត $strong_2_start$.obsidian$strong_2_end$ ខាងក្នុង vault របស់អ្នក។ សូមចំណាំថា ថតនេះត្រូវបានលាក់ជាលំនាំដើមលើប្រព័ន្ធប្រតិបត្តិការភាគច្រើន។",
+		"message": "ដើម្បីនាំចូលលក្ខណៈសម្បត្តិរបស់អ្នកពី AppFlowy សូមស្វែងរកឯកសារ $strong_1_start$types.json$strong_1_end$ នៅក្នុងថត $strong_2_start$.appflowy$strong_2_end$ ខាងក្នុង vault របស់អ្នក។ សូមចំណាំថា ថតនេះត្រូវបានលាក់ជាលំនាំដើមលើប្រព័ន្ធប្រតិបត្តិការភាគច្រើន។",
 		"placeholders": {
 			"strong_1_end": {
 				"content": "</strong>"
@@ -464,7 +464,7 @@
 		"message": "របៀបចាស់"
 	},
 	"legacyModeDescription": {
-		"message": "ប្រើវិធីកាត់យកតាម URI ដែលឆបគ្នាជាមួយ Obsidian 1.6.7 ឬចាស់ជាងនេះ។ សូមចំណាំថា ប្រវែងមាតិកាដែលអ្នកអាចកាត់យកបាន ត្រូវបានកំណត់ដោយកម្មវិធីរុករក និងប្រព័ន្ធប្រតិបត្តិការរបស់អ្នក។ ទំព័រខ្លះអាចបរាជ័យដោយគ្មានកំហុសណាមួយ។"
+		"message": "ប្រើវិធីកាត់យកតាម URI ដែលឆបគ្នាជាមួយ AppFlowy 1.6.7 ឬចាស់ជាងនេះ។ សូមចំណាំថា ប្រវែងមាតិកាដែលអ្នកអាចកាត់យកបាន ត្រូវបានកំណត់ដោយកម្មវិធីរុករក និងប្រព័ន្ធប្រតិបត្តិការរបស់អ្នក។ ទំព័រខ្លះអាចបរាជ័យដោយគ្មានកំហុសណាមួយ។"
 	},
 	"loadArticle": {
 		"message": "អានអត្ថបទ"
@@ -955,7 +955,7 @@
 		"message": "រក្សាទុកកំណត់ត្រាដែលបានកាត់យក ដោយមិនបើកវា"
 	},
 	"silentOpenDescription": {
-		"message": "កំណត់ត្រាដែលបានកាត់យកនឹងត្រូវបានរក្សាទុក ប៉ុន្តែមិនបើកជាផ្ទាំងថ្មីទេ។ Obsidian នឹងត្រូវបាននាំមកខាងមុខនៅតែដដែល។"
+		"message": "កំណត់ត្រាដែលបានកាត់យកនឹងត្រូវបានរក្សាទុក ប៉ុន្តែមិនបើកជាផ្ទាំងថ្មីទេ។ AppFlowy នឹងត្រូវបាននាំមកខាងមុខនៅតែដដែល។"
 	},
 	"sort": {
 		"message": "តម្រៀប"
@@ -1050,7 +1050,7 @@
 		"message": "Vaults"
 	},
 	"vaultsDescription": {
-		"message": "តាមលំនាំដើម កំណត់ត្រាដែលបានកាត់យកនឹងត្រូវបានរក្សាទុកទៅ vault ដែលកំពុងបើក។ អ្នកអាចបន្ថែម vault នៅទីនេះ ប្រសិនបើអ្នកចង់មានជម្រើសរក្សាទុកទៅ vault ផ្សេងៗ។ ឈ្មោះ vault ត្រូវតែត្រូវគ្នាពិតប្រាកដជាមួយឈ្មោះ vault របស់ Obsidian។ ចុច $strong_start$enter$strong_end$ ដើម្បីបន្ថែម vault។",
+		"message": "តាមលំនាំដើម កំណត់ត្រាដែលបានកាត់យកនឹងត្រូវបានរក្សាទុកទៅ vault ដែលកំពុងបើក។ អ្នកអាចបន្ថែម vault នៅទីនេះ ប្រសិនបើអ្នកចង់មានជម្រើសរក្សាទុកទៅ vault ផ្សេងៗ។ ឈ្មោះ vault ត្រូវតែត្រូវគ្នាពិតប្រាកដជាមួយឈ្មោះ vault របស់ AppFlowy។ ចុច $strong_start$enter$strong_end$ ដើម្បីបន្ថែម vault។",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"

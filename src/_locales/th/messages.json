@@ -18,7 +18,7 @@
 		"message": "เพิ่มผู้ให้บริการ"
 	},
 	"addToObsidian": {
-		"message": "เพิ่มไปยัง Obsidian"
+		"message": "เพิ่มไปยัง AppFlowy"
 	},
 	"addVaultPlaceholder": {
 		"message": "กด Enter เพื่อเพิ่มคลัง"
@@ -45,7 +45,7 @@
 		"message": "ไม่มีคีย์ API"
 	},
 	"apiKeysWarning": {
-		"message": "การใช้ผู้ให้บริการภายนอกถือว่าคุณยอมรับข้อกำหนดและนโยบายความเป็นส่วนตัวของพวกเขา คำขอตัวแปลจะถูกส่งตรงไปยังผู้ให้บริการที่คุณเลือก Obsidian ไม่ได้เก็บรวบรวมหรือจัดเก็บข้อมูลใดๆ เกี่ยวกับคำขอของคุณ"
+		"message": "การใช้ผู้ให้บริการภายนอกถือว่าคุณยอมรับข้อกำหนดและนโยบายความเป็นส่วนตัวของพวกเขา คำขอตัวแปลจะถูกส่งตรงไปยังผู้ให้บริการที่คุณเลือก AppFlowy ไม่ได้เก็บรวบรวมหรือจัดเก็บข้อมูลใดๆ เกี่ยวกับคำขอของคุณ"
 	},
 	"appendToDaily": {
 		"message": "เพิ่มไปยังบันทึกประจำวัน ที่ท้าย"
@@ -96,7 +96,7 @@
 		"message": "พฤติกรรมการคลิป"
 	},
 	"clipBehaviorDescription": {
-		"message": "เลือกวิธีบันทึกเนื้อหาที่เลือกไปยัง Obsidian กำหนดตัวแปร $strong_start${{content}}$strong_end$",
+		"message": "เลือกวิธีบันทึกเนื้อหาที่เลือกไปยัง AppFlowy กำหนดตัวแปร $strong_start${{content}}$strong_end$",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -107,7 +107,7 @@
 		}
 	},
 	"clipboardError": {
-		"message": "Obsidian ไม่สามารถเข้าถึงคลิปบอร์ดของคุณได้ ลองทำตามคำแนะนำการแก้ไขปัญหาที่นี่: $1",
+		"message": "AppFlowy ไม่สามารถเข้าถึงคลิปบอร์ดของคุณได้ ลองทำตามคำแนะนำการแก้ไขปัญหาที่นี่: $1",
 		"placeholders": {
 			"1": {
 				"content": "$1"
@@ -196,7 +196,7 @@
 		"message": "ทำซ้ำ"
 	},
 	"earlyAccessDescription": {
-		"message": "ใช้คุณสมบัติที่ต้องการ $link_start$เวอร์ชัน early access$link_end$ ล่าสุดของ Obsidian ปัจจุบันต้องใช้ Obsidian 1.7.2 หรือใหม่กว่า",
+		"message": "ใช้คุณสมบัติที่ต้องการ $link_start$เวอร์ชัน early access$link_end$ ล่าสุดของ AppFlowy ปัจจุบันต้องใช้ AppFlowy 1.7.2 หรือใหม่กว่า",
 		"placeholders": {
 			"link_end": {
 				"content": "</a>"
@@ -225,7 +225,7 @@
 		"message": "ฝัง"
 	},
 	"enableHighlighterDescription": {
-		"message": "ไฮไลต์เนื้อหาบนหน้าเว็บที่คุณสามารถบันทึกไปยัง Obsidian"
+		"message": "ไฮไลต์เนื้อหาบนหน้าเว็บที่คุณสามารถบันทึกไปยัง AppFlowy"
 	},
 	"enableInterpreter": {
 		"message": "เปิดใช้งานตัวแปล"
@@ -272,7 +272,7 @@
 		"message": "ส่งออกคุณสมบัติ"
 	},
 	"exportPropertiesDescription": {
-		"message": "บันทึกคุณสมบัติ Web Clipper ไปยังไฟล์ $strong_start$types.json$strong_end$ ที่สามารถนำเข้าไปยังคลัง Obsidian ของคุณหรือ Web Clipper บนอุปกรณ์อื่น",
+		"message": "บันทึกคุณสมบัติ Web Clipper ไปยังไฟล์ $strong_start$types.json$strong_end$ ที่สามารถนำเข้าไปยังคลัง AppFlowy ของคุณหรือ Web Clipper บนอุปกรณ์อื่น",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
@@ -283,10 +283,10 @@
 		}
 	},
 	"extensionDescription": {
-		"message": "บันทึกเนื้อหาจากเว็บในรูปแบบส่วนตัวและยั่งยืนที่คุณสามารถเข้าถึงได้แบบออฟไลน์ ส่วนขยายเบราว์เซอร์อย่างเป็นทางการสำหรับ Obsidian"
+		"message": "บันทึกเนื้อหาจากเว็บในรูปแบบส่วนตัวและยั่งยืนที่คุณสามารถเข้าถึงได้แบบออฟไลน์ ส่วนขยายเบราว์เซอร์อย่างเป็นทางการสำหรับ AppFlowy"
 	},
 	"extensionName": {
-		"message": "Obsidian Web Clipper"
+		"message": "AppFlowy Web Clipper"
 	},
 	"failedToCopyText": {
 		"message": "ไม่สามารถคัดลอกข้อความ"
@@ -406,7 +406,7 @@
 		"message": "นำเข้าคุณสมบัติ"
 	},
 	"importPropertiesDescription": {
-		"message": "ในการนำเข้าคุณสมบัติจาก Obsidian ให้ค้นหาไฟล์ $strong_1_start$types.json$strong_1_end$ ในโฟลเดอร์ $strong_2_start$.obsidian$strong_2_end$ ในคลังของคุณ โปรดทราบว่าโฟลเดอร์นี้ถูกซ่อนโดยค่าเริ่มต้นบนระบบปฏิบัติการส่วนใหญ่",
+		"message": "ในการนำเข้าคุณสมบัติจาก AppFlowy ให้ค้นหาไฟล์ $strong_1_start$types.json$strong_1_end$ ในโฟลเดอร์ $strong_2_start$.appflowy$strong_2_end$ ในคลังของคุณ โปรดทราบว่าโฟลเดอร์นี้ถูกซ่อนโดยค่าเริ่มต้นบนระบบปฏิบัติการส่วนใหญ่",
 		"placeholders": {
 			"strong_1_end": {
 				"content": "</strong>"
@@ -464,7 +464,7 @@
 		"message": "โหมดเก่า"
 	},
 	"legacyModeDescription": {
-		"message": "ใช้วิธีการคลิป URI ที่เข้ากันได้กับ Obsidian 1.6.7 หรือเก่ากว่า โปรดทราบว่าความยาวของเนื้อหาที่คุณสามารถคลิปได้ถูกจำกัดโดยเบราว์เซอร์และระบบปฏิบัติการของคุณ บางหน้าอาจล้มเหลวโดยไม่มีข้อความแสดงข้อผิดพลาด"
+		"message": "ใช้วิธีการคลิป URI ที่เข้ากันได้กับ AppFlowy 1.6.7 หรือเก่ากว่า โปรดทราบว่าความยาวของเนื้อหาที่คุณสามารถคลิปได้ถูกจำกัดโดยเบราว์เซอร์และระบบปฏิบัติการของคุณ บางหน้าอาจล้มเหลวโดยไม่มีข้อความแสดงข้อผิดพลาด"
 	},
 	"loadArticle": {
 		"message": "อ่านบทความ"
@@ -955,7 +955,7 @@
 		"message": "บันทึกบันทึกที่คลิปโดยไม่เปิด"
 	},
 	"silentOpenDescription": {
-		"message": "บันทึกที่คลิปจะถูกบันทึกแต่ไม่เปิดเป็นแท็บใหม่ Obsidian จะยังคงถูกนำมาไว้ด้านหน้า"
+		"message": "บันทึกที่คลิปจะถูกบันทึกแต่ไม่เปิดเป็นแท็บใหม่ AppFlowy จะยังคงถูกนำมาไว้ด้านหน้า"
 	},
 	"sort": {
 		"message": "จัดเรียง"
@@ -1050,7 +1050,7 @@
 		"message": "คลัง"
 	},
 	"vaultsDescription": {
-		"message": "โดยค่าเริ่มต้น บันทึกที่คลิปจะถูกบันทึกในคลังที่เปิดอยู่ คุณสามารถเพิ่มคลังที่นี่ถ้าคุณต้องการตัวเลือกในการบันทึกไปยังคลังต่างๆ ชื่อคลังต้องตรงกับชื่อคลัง Obsidian พอดี กด $strong_start$enter$strong_end$ เพื่อเพิ่มคลัง",
+		"message": "โดยค่าเริ่มต้น บันทึกที่คลิปจะถูกบันทึกในคลังที่เปิดอยู่ คุณสามารถเพิ่มคลังที่นี่ถ้าคุณต้องการตัวเลือกในการบันทึกไปยังคลังต่างๆ ชื่อคลังต้องตรงกับชื่อคลัง AppFlowy พอดี กด $strong_start$enter$strong_end$ เพื่อเพิ่มคลัง",
 		"placeholders": {
 			"strong_end": {
 				"content": "</strong>"
