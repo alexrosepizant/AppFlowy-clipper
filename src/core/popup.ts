@@ -279,8 +279,6 @@ async function initializeExtension(tabId: number) {
 		lastSelectedSpace = await getLocalStorage("lastSelectedSpace");
 		lastSelectedFolder = await getLocalStorage("lastSelectedFolder");
 
-		updateVaultDropdown(loadedSettings.vaults);
-
 		const tab = await getTabInfo(tabId);
 		if (!tab.url || isBlankPage(tab.url)) {
 			showError("pageCannotBeClipped");
@@ -1927,7 +1925,8 @@ async function handleClipObsidian(): Promise<void> {
 		const fileContent = frontmatter + noteContentField.value;
 
 		// Save to Obsidian
-		const selectedVault = currentTemplate.vault || vaultDropdown.value;
+		const selectedVault =
+			vaultDropdown.value || currentTemplate.vault || "";
 		const isDailyNote =
 			currentTemplate.behavior === "append-daily" ||
 			currentTemplate.behavior === "prepend-daily";
@@ -1950,10 +1949,8 @@ async function handleClipObsidian(): Promise<void> {
 			tabInfo.title
 		);
 
-		if (!currentTemplate.vault) {
-			lastSelectedVault = selectedVault;
-			await setLocalStorage("lastSelectedVault", lastSelectedVault);
-		}
+		lastSelectedVault = selectedVault;
+		await setLocalStorage("lastSelectedVault", lastSelectedVault);
 
 		if (!isSidePanel) {
 			setTimeout(() => window.close(), 500);

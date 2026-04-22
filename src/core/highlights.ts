@@ -1,5 +1,5 @@
 import browser from '../utils/browser-polyfill';
-import { AnyHighlightData, StoredData, DomainSettings, normalizeUrl } from '../utils/highlighter';
+import { AnyHighlightData, StoredData, DomainSettings, collapseGroupsForExport, normalizeUrl } from '../utils/highlighter';
 import { translatePage, getMessage, setupLanguageAndDirection } from '../utils/i18n';
 import { addBrowserClassToHtml, detectBrowser } from '../utils/browser-detection';
 import DOMPurify from 'dompurify';
@@ -51,7 +51,10 @@ const faviconCache = new Map<string, HTMLImageElement>();
 
 // Batched rendering
 const BATCH_SIZE = 50;
-let flatEntries: { entry: HighlightEntry; pageUrl: string; domain: string; title?: string }[] = [];
+// Each entry in flatEntries is one render unit — a single highlight, or a
+// group of highlights sharing a groupId that should render as one card.
+interface RenderUnit { entries: HighlightEntry[]; pageUrl: string; domain: string; title?: string }
+let flatEntries: RenderUnit[] = [];
 let renderedCount = 0;
 let currentPageGroup: HTMLElement | null = null;
 let observer: IntersectionObserver | null = null;
@@ -93,7 +96,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 			sortOrder = value;
 			updateSortMenuActiveState();
 			renderSidebar();
-			renderMain();
 		});
 	});
 	updateSortMenuActiveState();
@@ -121,8 +123,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 	browser.storage.onChanged.addListener((changes, area) => {
 		if (area === 'local' && changes.highlights) {
 			loadData().then(() => {
-				renderSidebar();
-				renderMain();
+				if (!updateSidebarCounts()) {
+					renderSidebar();
+				}
+				if (!updateMainIncremental()) {
+					renderMain();
+				}
+			});
+		}
+		if (area === 'sync' && changes.reader_settings) {
+			applyReaderTheme().then(() => {
+				reapplyThemeToPageGroups();
 			});
 		}
 	});
@@ -156,9 +167,9 @@ async function applyReaderTheme() {
 
 	if (settings) {
 		const effectiveTheme = isDark && settings.darkTheme !== 'same' ? settings.darkTheme : settings.lightTheme;
-		if (effectiveTheme && effectiveTheme !== 'default') {
-			highlightThemeAttr = { name: 'data-reader-theme', value: effectiveTheme };
-		}
+		highlightThemeAttr = effectiveTheme && effectiveTheme !== 'default'
+			? { name: 'data-reader-theme', value: effectiveTheme }
+			: null;
 
 		// Font settings apply globally
 		const html = document.documentElement;
@@ -173,12 +184,19 @@ async function applyReaderTheme() {
 }
 
 function applyThemeToElement(el: HTMLElement) {
+	el.classList.remove('theme-dark', 'theme-light');
+	el.removeAttribute('data-reader-theme');
 	for (const cls of highlightThemeClasses) {
 		el.classList.add(cls);
 	}
 	if (highlightThemeAttr) {
 		el.setAttribute(highlightThemeAttr.name, highlightThemeAttr.value);
 	}
+}
+
+function reapplyThemeToPageGroups() {
+	const groups = document.querySelectorAll<HTMLElement>('.highlight-page-group');
+	groups.forEach(el => applyThemeToElement(el));
 }
 
 // --- Data loading ---
@@ -441,127 +459,212 @@ function createPageSubItems(group: DomainGroup): HTMLElement[] {
 	return items;
 }
 
+// Update sidebar counts in-place without a full rebuild.
+// Returns true if successful, false if a full renderSidebar() is needed.
+function updateSidebarCounts(): boolean {
+	const domainListEl = document.getElementById('highlights-domain-list')!;
+	const filtered = getFilteredGroups();
+	const groupMap = new Map<string, DomainGroup>();
+	const pageCountMap = new Map<string, number>();
+	for (const g of filtered) {
+		groupMap.set(g.domain, g);
+		for (const p of g.pages) pageCountMap.set(p.url, p.highlights.length);
+	}
+
+	// Check that rendered domains match filtered domains
+	const domainItems = Array.from(domainListEl.querySelectorAll<HTMLElement>('.nav-domain'));
+	if (domainItems.length !== filtered.length) return false;
+	for (const group of filtered) {
+		const cached = sidebarNodeCache.get(group.domain);
+		if (!cached) return false;
+		cached.countEl.textContent = String(group.totalHighlights);
+	}
+
+	// Page sub-items aren't cached, so query the DOM
+	const pageItems = Array.from(domainListEl.querySelectorAll<HTMLElement>('.nav-page'));
+	for (let i = 0; i < pageItems.length; i++) {
+		const count = pageCountMap.get(pageItems[i].getAttribute('data-url')!);
+		if (count !== undefined) {
+			const countEl = pageItems[i].querySelector('.nav-count');
+			if (countEl) countEl.textContent = String(count);
+		}
+	}
+
+	return true;
+}
+
+interface CachedDomainNode {
+	li: HTMLElement;
+	countEl: Element;
+	chevronWrap: Element;
+}
+const sidebarNodeCache = new Map<string, CachedDomainNode>();
+
 function renderSidebar() {
 	const domainListEl = document.getElementById('highlights-domain-list')!;
 	const filtered = getFilteredGroups();
 
-	domainListEl.textContent = '';
+	// Detach children without destroying cached nodes
+	domainListEl.replaceChildren();
+
+	// Prune cache entries for domains no longer in data
+	const activeDomains = new Set(allDomainGroups.map(g => g.domain));
+	for (const domain of sidebarNodeCache.keys()) {
+		if (!activeDomains.has(domain)) sidebarNodeCache.delete(domain);
+	}
+
+	let needsIcons = false;
 
 	for (const group of filtered) {
-		const isExpanded = expandedSidebarDomains.has(group.domain);
-		const isDomainActive = currentNav.type === 'domain' && currentNav.domain === group.domain;
-
-		const li = document.createElement('li');
-		li.className = 'nav-domain' + (isDomainActive ? ' active' : '');
-		li.setAttribute('data-domain', group.domain);
-
-		const chevronWrap = document.createElement('div');
-		chevronWrap.className = 'nav-chevron-wrap' + (isExpanded ? ' is-expanded' : '');
-		const chevronIcon = document.createElement('i');
-		chevronIcon.setAttribute('data-lucide', 'chevron-right');
-		chevronWrap.appendChild(chevronIcon);
-		li.appendChild(chevronWrap);
-
-		const normalized = group.domain.replace(/^www\./, '');
-		const domainSettings = domainSettingsMap[normalized];
-		const siteName = domainSettings?.site;
-
-		if (domainSettings?.favicon) {
-			let favicon = faviconCache.get(normalized);
-			if (!favicon) {
-				favicon = document.createElement('img');
-				favicon.className = 'nav-domain-favicon';
-				favicon.src = domainSettings.favicon;
-				favicon.width = 16;
-				favicon.height = 16;
-				favicon.onerror = () => favicon!.remove();
-				faviconCache.set(normalized, favicon);
-			}
-			li.appendChild(favicon);
+		let cached = sidebarNodeCache.get(group.domain);
+		if (!cached) {
+			cached = createDomainNode(group.domain);
+			sidebarNodeCache.set(group.domain, cached);
+			needsIcons = true;
 		}
 
-		const name = document.createElement('span');
-		name.className = 'nav-domain-name';
-		name.textContent = siteName || displayDomain(group.domain);
-		if (siteName) name.title = displayDomain(group.domain);
-		li.appendChild(name);
+		const isDomainActive = currentNav.type === 'domain' && currentNav.domain === group.domain;
+		cached.li.classList.toggle('active', isDomainActive);
+		cached.countEl.textContent = String(group.totalHighlights);
+		const isExpanded = expandedSidebarDomains.has(group.domain);
+		cached.chevronWrap.classList.toggle('is-expanded', isExpanded);
 
-		const count = document.createElement('span');
-		count.className = 'nav-count';
-		count.textContent = String(group.totalHighlights);
-		li.appendChild(count);
+		domainListEl.appendChild(cached.li);
 
-		// Click chevron to expand/collapse, click name to navigate
-		chevronWrap.addEventListener('click', (e) => {
-			e.stopPropagation();
-			const wasExpanded = expandedSidebarDomains.has(group.domain);
-			if (wasExpanded) {
-				expandedSidebarDomains.delete(group.domain);
-				chevronWrap.classList.remove('is-expanded');
-				// Remove page sub-items
-				let next = li.nextElementSibling;
-				while (next && next.classList.contains('nav-page')) {
-					const toRemove = next;
-					next = next.nextElementSibling;
-					toRemove.remove();
-				}
-			} else {
-				expandedSidebarDomains.add(group.domain);
-				chevronWrap.classList.add('is-expanded');
-				// Insert page sub-items after this domain li
-				const pageItems = createPageSubItems(group);
-				let insertAfter: Element = li;
-				for (const pageLi of pageItems) {
-					insertAfter.after(pageLi);
-					insertAfter = pageLi;
-				}
-				createIcons({ icons });
-			}
-		});
-
-		li.addEventListener('click', () => {
-			const isActive = currentNav.type === 'domain' && currentNav.domain === group.domain;
-			if (isActive) {
-				// Already selected — toggle expand/collapse
-				if (expandedSidebarDomains.has(group.domain)) {
-					expandedSidebarDomains.delete(group.domain);
-					chevronWrap.classList.remove('is-expanded');
-					let next = li.nextElementSibling;
-					while (next && next.classList.contains('nav-page')) {
-						const toRemove = next;
-						next = next.nextElementSibling;
-						toRemove.remove();
-					}
-				} else {
-					expandedSidebarDomains.add(group.domain);
-					chevronWrap.classList.add('is-expanded');
-					let insertAfter: Element = li;
-					for (const pageLi of createPageSubItems(group)) {
-						insertAfter.after(pageLi);
-						insertAfter = pageLi;
-					}
-					createIcons({ icons });
-				}
-			} else {
-				navigate({ type: 'domain', domain: group.domain });
-			}
-		});
-
-		domainListEl.appendChild(li);
-
-		// Page sub-items
 		if (isExpanded) {
-			const pageItems = createPageSubItems(group);
-			for (const pageLi of pageItems) {
+			for (const pageLi of createPageSubItems(group)) {
 				domainListEl.appendChild(pageLi);
 			}
 		}
 	}
 
-	createIcons({ icons });
+	if (needsIcons) createIcons({ icons });
+}
+
+function createDomainNode(domain: string): CachedDomainNode {
+	const li = document.createElement('li');
+	li.className = 'nav-domain';
+	li.setAttribute('data-domain', domain);
+
+	const chevronWrap = document.createElement('div');
+	chevronWrap.className = 'nav-chevron-wrap';
+	const chevronIcon = document.createElement('i');
+	chevronIcon.setAttribute('data-lucide', 'chevron-right');
+	chevronWrap.appendChild(chevronIcon);
+	li.appendChild(chevronWrap);
+
+	const normalized = domain.replace(/^www\./, '');
+	const domainSettings = domainSettingsMap[normalized];
+	const siteName = domainSettings?.site;
+
+	if (domainSettings?.favicon) {
+		let favicon = faviconCache.get(normalized);
+		if (!favicon) {
+			favicon = document.createElement('img');
+			favicon.className = 'nav-domain-favicon';
+			favicon.src = domainSettings.favicon;
+			favicon.width = 16;
+			favicon.height = 16;
+			favicon.onerror = () => {
+				const globe = document.createElement('i');
+				globe.className = 'nav-domain-favicon';
+				globe.setAttribute('data-lucide', 'globe');
+				favicon!.replaceWith(globe);
+				createIcons({ icons });
+			};
+			faviconCache.set(normalized, favicon);
+		}
+		li.appendChild(favicon.cloneNode(true));
+	} else {
+		const globe = document.createElement('i');
+		globe.className = 'nav-domain-favicon';
+		globe.setAttribute('data-lucide', 'globe');
+		li.appendChild(globe);
+	}
+
+	const name = document.createElement('span');
+	name.className = 'nav-domain-name';
+	name.textContent = siteName || displayDomain(domain);
+	if (siteName) name.title = displayDomain(domain);
+	li.appendChild(name);
+
+	const count = document.createElement('span');
+	count.className = 'nav-count';
+	li.appendChild(count);
+
+	chevronWrap.addEventListener('click', (e) => {
+		e.stopPropagation();
+		toggleDomainExpand(domain);
+	});
+
+	li.addEventListener('click', () => {
+		const isActive = currentNav.type === 'domain' && currentNav.domain === domain;
+		if (isActive) {
+			toggleDomainExpand(domain);
+		} else {
+			navigate({ type: 'domain', domain });
+		}
+	});
+
+	return { li, countEl: count, chevronWrap };
+}
+
+function toggleDomainExpand(domain: string) {
+	const cached = sidebarNodeCache.get(domain);
+	if (!cached) return;
+	const { li, chevronWrap } = cached;
+	if (expandedSidebarDomains.has(domain)) {
+		expandedSidebarDomains.delete(domain);
+		chevronWrap.classList.remove('is-expanded');
+		let next = li.nextElementSibling;
+		while (next && next.classList.contains('nav-page')) {
+			const toRemove = next;
+			next = next.nextElementSibling;
+			toRemove.remove();
+		}
+	} else {
+		expandedSidebarDomains.add(domain);
+		chevronWrap.classList.add('is-expanded');
+		const group = getFilteredGroups().find(g => g.domain === domain);
+		if (group) {
+			let insertAfter: Element = li;
+			for (const pageLi of createPageSubItems(group)) {
+				insertAfter.after(pageLi);
+				insertAfter = pageLi;
+			}
+			createIcons({ icons });
+		}
+	}
 }
 
 // --- Main content ---
+
+// Collapse group members (from a multi-block selection) into a single render
+// unit so the highlights page shows them as one card. Preserves order and
+// groups across the page the selection originated in.
+function collapseGroupsForRender(
+	entries: { entry: HighlightEntry; pageUrl: string; domain: string; title?: string }[]
+): RenderUnit[] {
+	const units: RenderUnit[] = [];
+	const byKey = new Map<string, RenderUnit>(); // pageUrl::groupId → unit
+	for (const e of entries) {
+		const gid = e.entry.data.groupId;
+		if (gid) {
+			const key = `${e.pageUrl}::${gid}`;
+			const existing = byKey.get(key);
+			if (existing) {
+				existing.entries.push(e.entry);
+				continue;
+			}
+			const unit: RenderUnit = { entries: [e.entry], pageUrl: e.pageUrl, domain: e.domain, title: e.title };
+			byKey.set(key, unit);
+			units.push(unit);
+		} else {
+			units.push({ entries: [e.entry], pageUrl: e.pageUrl, domain: e.domain, title: e.title });
+		}
+	}
+	return units;
+}
 
 function getVisibleEntries(): { entry: HighlightEntry; pageUrl: string; domain: string; title?: string }[] {
 	const filtered = getFilteredGroups();
@@ -581,7 +684,107 @@ function getVisibleEntries(): { entry: HighlightEntry; pageUrl: string; domain: 
 		}
 	}
 
+	// Page groups newest first; within-page order preserved (stable sort)
+	const pageNewest = new Map<string, number>();
+	for (const e of entries) {
+		const t = parseInt(e.entry.data.id) || 0;
+		pageNewest.set(e.pageUrl, Math.max(pageNewest.get(e.pageUrl) || 0, t));
+	}
+	entries.sort((a, b) => {
+		if (a.pageUrl === b.pageUrl) return 0;
+		return (pageNewest.get(b.pageUrl) || 0) - (pageNewest.get(a.pageUrl) || 0);
+	});
+
 	return entries;
+}
+
+// Patch the main content in-place instead of tearing down and rebuilding.
+// Returns true if the incremental update succeeded, false to fall back to renderMain().
+function updateMainIncremental(): boolean {
+	const listEl = document.getElementById('highlights-list')!;
+	const newFlatEntries = collapseGroupsForRender(getVisibleEntries());
+
+	const oldKeys = new Set<string>();
+	for (let i = 0; i < renderedCount; i++) {
+		oldKeys.add(unitKey(flatEntries[i].entries));
+	}
+
+	// Compute keys once for new entries, then derive added/removed
+	const newKeyList: string[] = [];
+	const newKeySet = new Set<string>();
+	for (const unit of newFlatEntries) {
+		const key = unitKey(unit.entries);
+		newKeyList.push(key);
+		newKeySet.add(key);
+	}
+
+	const addedKeySet = new Set<string>();
+	const added: RenderUnit[] = [];
+	for (let i = 0; i < newFlatEntries.length; i++) {
+		if (!oldKeys.has(newKeyList[i])) {
+			addedKeySet.add(newKeyList[i]);
+			added.push(newFlatEntries[i]);
+		}
+	}
+	const removedKeys: string[] = [];
+	for (const key of oldKeys) {
+		if (!newKeySet.has(key)) removedKeys.push(key);
+	}
+
+	if (added.length === 0 && removedKeys.length === 0) {
+		flatEntries = newFlatEntries;
+		return true;
+	}
+
+	for (const key of removedKeys) {
+		const el = listEl.querySelector<HTMLElement>(`.highlight-item[data-unit-key="${CSS.escape(key)}"]`);
+		if (!el) return false;
+		const group = el.closest<HTMLElement>('.highlight-page-group');
+		el.remove();
+		if (group && !group.querySelector('.highlight-item')) {
+			group.remove();
+		}
+	}
+
+	// Insert new highlights in correct DOM-position order
+	const pagesWithAdds = new Set(added.map(u => u.pageUrl));
+
+	for (const pageUrl of pagesWithAdds) {
+		let group = listEl.querySelector<HTMLElement>(`.highlight-page-group[data-page-url="${CSS.escape(pageUrl)}"]`);
+		if (!group) {
+			const sample = added.find(u => u.pageUrl === pageUrl)!;
+			group = createPageGroupWrapper(pageUrl);
+			const header = createPageHeader(pageUrl, sample.domain, sample.title);
+			group.appendChild(header);
+			listEl.insertBefore(group, listEl.firstChild);
+		}
+
+		// Walk desired order and insert before the next existing sibling
+		const pageUnits = newFlatEntries.filter(u => u.pageUrl === pageUrl);
+		for (let i = 0; i < pageUnits.length; i++) {
+			const key = unitKey(pageUnits[i].entries);
+			if (!addedKeySet.has(key)) continue;
+
+			let refEl: HTMLElement | null = null;
+			for (let j = i + 1; j < pageUnits.length; j++) {
+				const sibKey = unitKey(pageUnits[j].entries);
+				if (!addedKeySet.has(sibKey)) {
+					refEl = group.querySelector<HTMLElement>(`.highlight-item[data-unit-key="${CSS.escape(sibKey)}"]`);
+					if (refEl) break;
+				}
+			}
+
+			const card = createHighlightItem(pageUnits[i].entries, pageUrl);
+			group.insertBefore(card, refEl);
+		}
+	}
+
+	flatEntries = newFlatEntries;
+	renderedCount = Math.min(renderedCount + added.length - removedKeys.length, flatEntries.length);
+	if (renderedCount < 0) renderedCount = 0;
+
+	createIcons({ icons });
+	return true;
 }
 
 function renderMain() {
@@ -594,7 +797,7 @@ function renderMain() {
 	renderedCount = 0;
 	currentPageGroup = null;
 
-	flatEntries = getVisibleEntries();
+	flatEntries = collapseGroupsForRender(getVisibleEntries());
 
 	// Breadcrumb
 	renderBreadcrumb();
@@ -621,7 +824,7 @@ function renderMain() {
 			.find(g => g.domain === nav.domain)?.pages
 			.find(p => p.url === nav.url);
 
-		currentPageGroup = createPageGroupWrapper();
+		currentPageGroup = createPageGroupWrapper(nav.url);
 		listEl.appendChild(currentPageGroup);
 		const pageHeader = createPageHeader(nav.url, nav.domain, pageGroup?.title);
 		currentPageGroup.appendChild(pageHeader);
@@ -634,9 +837,10 @@ function renderMain() {
 	renderNextBatch();
 }
 
-function createPageGroupWrapper(): HTMLElement {
+function createPageGroupWrapper(pageUrl: string): HTMLElement {
 	const wrapper = document.createElement('div');
 	wrapper.className = 'highlight-page-group';
+	wrapper.setAttribute('data-page-url', pageUrl);
 	applyThemeToElement(wrapper);
 	return wrapper;
 }
@@ -652,23 +856,25 @@ function renderNextBatch() {
 
 	// For single-page view, ensure we have a group wrapper
 	if (currentNav.type === 'page' && !currentPageGroup) {
-		currentPageGroup = createPageGroupWrapper();
+		const url = flatEntries[renderedCount]?.pageUrl || '';
+		currentPageGroup = createPageGroupWrapper(url);
 		listEl.appendChild(currentPageGroup);
 	}
 
 	for (let i = renderedCount; i < end; i++) {
-		const { entry, pageUrl, domain, title } = flatEntries[i];
+		const unit = flatEntries[i];
+		const { entries, pageUrl, domain, title } = unit;
 
 		// Insert a page header when the URL changes (in all/domain views)
 		if (currentNav.type !== 'page' && pageUrl !== lastPageUrl) {
-			currentPageGroup = createPageGroupWrapper();
+			currentPageGroup = createPageGroupWrapper(pageUrl);
 			listEl.appendChild(currentPageGroup);
 			const pageHeader = createPageHeader(pageUrl, domain, title);
 			currentPageGroup.appendChild(pageHeader);
 			lastPageUrl = pageUrl;
 		}
 
-		(currentPageGroup || listEl).appendChild(createHighlightItem(entry));
+		(currentPageGroup || listEl).appendChild(createHighlightItem(entries, pageUrl));
 	}
 
 	renderedCount = end;
@@ -759,10 +965,7 @@ async function exportCurrentContext() {
 
 	const exportData = Array.from(byUrl.entries()).map(([url, highlights]) => ({
 		url,
-		highlights: highlights.map(h => ({
-			text: h.data.content,
-			timestamp: dayjs(parseInt(h.data.id)).toISOString()
-		}))
+		highlights: collapseGroupsForExport(highlights.map(h => h.data)),
 	}));
 
 	const jsonContent = JSON.stringify(exportData, null, 2);
@@ -1000,27 +1203,32 @@ function setButtonIcon(btn: HTMLElement, iconName: string) {
 	createIcons({ icons });
 }
 
-function createHighlightItem(entry: HighlightEntry): HTMLElement {
+function unitKey(entries: HighlightEntry[]): string {
+	return entries.map(e => e.data.id).join(',');
+}
+
+function createHighlightItem(entries: HighlightEntry[], pageUrl: string): HTMLElement {
 	const item = document.createElement('div');
 	item.className = 'highlight-item';
+	item.setAttribute('data-unit-key', unitKey(entries));
 
 	const content = document.createElement('div');
 	content.className = 'highlight-item-content';
 
-	const sanitized = DOMPurify.sanitize(entry.data.content || '');
-	content.innerHTML = sanitized;
-	if (searchQuery) {
-		highlightTextNodes(content, searchQuery);
-	}
+	const joined = entries.map(e => e.data.content || '').join('\n');
+	content.replaceChildren(DOMPurify.sanitize(joined, { RETURN_DOM_FRAGMENT: true }));
+	// A grouped selection may include stored <li> fragments; wrap consecutive
+	// orphan <li>s in a <ul> so the list renders with its bullets intact.
+	wrapOrphanListItems(content);
+	if (searchQuery) highlightTextNodes(content, searchQuery);
 	item.appendChild(content);
 
-	if (entry.data.notes && entry.data.notes.length > 0) {
-		for (const note of entry.data.notes) {
-			const noteEl = document.createElement('div');
-			noteEl.className = 'highlight-item-note';
-			noteEl.textContent = note;
-			item.appendChild(noteEl);
-		}
+	const mergedNotes = entries.flatMap(e => e.data.notes ?? []);
+	for (const note of mergedNotes) {
+		const noteEl = document.createElement('div');
+		noteEl.className = 'highlight-item-note';
+		noteEl.textContent = note;
+		item.appendChild(noteEl);
 	}
 
 	const footer = document.createElement('div');
@@ -1036,7 +1244,7 @@ function createHighlightItem(entry: HighlightEntry): HTMLElement {
 	copyIcon.setAttribute('data-lucide', 'copy');
 	copyBtn.appendChild(copyIcon);
 	copyBtn.addEventListener('click', async () => {
-		const markdown = createMarkdownContent(entry.data.content || '', entry.url);
+		const markdown = entries.map(e => createMarkdownContent(e.data.content || '', pageUrl)).join('\n\n');
 		await navigator.clipboard.writeText(markdown);
 		copyBtn.classList.add('is-copied');
 		setButtonIcon(copyBtn, 'check');
@@ -1054,7 +1262,7 @@ function createHighlightItem(entry: HighlightEntry): HTMLElement {
 	deleteItemIcon.setAttribute('data-lucide', 'trash-2');
 	deleteBtn.appendChild(deleteItemIcon);
 	deleteBtn.addEventListener('click', async () => {
-		await deleteHighlight(entry.url, entry.data.id);
+		for (const e of entries) await deleteHighlight(pageUrl, e.data.id);
 	});
 	actions.appendChild(deleteBtn);
 
@@ -1062,6 +1270,29 @@ function createHighlightItem(entry: HighlightEntry): HTMLElement {
 	item.appendChild(footer);
 
 	return item;
+}
+
+// Wrap consecutive orphan <li> elements (not already inside a <ul>/<ol>) in
+// a <ul>. Used when rendering grouped highlights — stored <li> fragments
+// don't carry their original list parent, so we synthesize one.
+// TODO: always wraps in <ul>. Ordered list content (<ol>) loses its
+// numbering. To fix, store the parent list type (ul vs ol) alongside each
+// <li> highlight at creation time.
+function wrapOrphanListItems(root: HTMLElement): void {
+	const children = Array.from(root.children);
+	let i = 0;
+	while (i < children.length) {
+		if (children[i].tagName === 'LI') {
+			let j = i;
+			while (j < children.length && children[j].tagName === 'LI') j++;
+			const ul = document.createElement('ul');
+			root.insertBefore(ul, children[i]);
+			for (let k = i; k < j; k++) ul.appendChild(children[k]);
+			i = j;
+		} else {
+			i++;
+		}
+	}
 }
 
 // --- Helpers ---
@@ -1087,6 +1318,7 @@ function highlightTextNodes(root: HTMLElement, query: string) {
 		const after = textNode.splitText(index);
 		const matched = after.splitText(length);
 		const mark = document.createElement('mark');
+		mark.className = 'search-match';
 		mark.textContent = after.textContent;
 		after.parentNode!.replaceChild(mark, after);
 		// matched is already in the DOM after mark

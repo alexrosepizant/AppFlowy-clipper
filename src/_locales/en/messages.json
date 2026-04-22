@@ -450,6 +450,9 @@
 	"highlightPage": {
 		"message": "Highlight page"
 	},
+	"highlightSelection": {
+		"message": "Highlight"
+	},
 	"highlighter": {
 		"message": "Highlighter"
 	},

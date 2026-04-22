@@ -1,11 +1,13 @@
 import browser from './utils/browser-polyfill';
 import * as highlighter from './utils/highlighter';
+import { removeExistingHighlights } from './utils/highlighter-overlays';
 import { loadSettings, generalSettings } from './utils/storage-utils';
 import { getDomain } from './utils/string-utils';
 import { extractContentBySelector as extractContentBySelectorShared } from './utils/shared';
 import Defuddle from 'defuddle';
 import { createMarkdownContent } from 'defuddle/full';
 import { flattenShadowDom } from './utils/flatten-shadow-dom';
+import { serializeChildren } from './utils/dom-utils';
 import { saveFile } from './utils/file-utils';
 import { debugLog } from './utils/debug';
 import { updateSidebarWidth, addResizeHandle, cleanupResizeHandlers } from './utils/iframe-resize';
@@ -208,7 +210,7 @@ declare global {
 					const clonedSelection = range.cloneContents();
 					const div = document.createElement('div');
 					div.appendChild(clonedSelection);
-					selectedHtml = div.innerHTML;
+					selectedHtml = serializeChildren(div);
 				}
 
 				const rawHtml = document.documentElement.outerHTML;
@@ -383,7 +385,6 @@ declare global {
 				}
 
 				if (elementToHighlight) {
-					const xpath = highlighter.getElementXPath(elementToHighlight);
 					highlighter.highlightElement(elementToHighlight);
 				} else {
 					console.warn('Could not find element to highlight. Info:', request.targetElementInfo);
@@ -454,6 +455,30 @@ declare global {
 
 	// Initialize highlighter
 	initializeHighlighter();
+
+	// Expose highlighter API on window so reader-script.js (a separate
+	// webpack bundle injected when reader mode activates) can delegate
+	// all state operations to this single module instance. Without this,
+	// both bundles own a copy of highlighter.ts with independent mutable
+	// state — the bridge ensures one source of truth per tab.
+	window.__obsidianHighlighter = {
+		toggleHighlighterMenu: highlighter.toggleHighlighterMenu,
+		handleTextSelection: highlighter.handleTextSelection,
+		highlightElement: highlighter.highlightElement,
+		applyHighlights: highlighter.applyHighlights,
+		loadHighlights: highlighter.loadHighlights,
+		invalidateHighlightCache: highlighter.invalidateHighlightCache,
+		repositionHighlights: highlighter.repositionHighlights,
+		getHighlights: highlighter.getHighlights,
+		setPageUrl: highlighter.setPageUrl,
+		setPageTitle: highlighter.setPageTitle,
+		updatePageDomainSettings: highlighter.updatePageDomainSettings,
+		clearHighlights: highlighter.clearHighlights,
+		saveHighlights: highlighter.saveHighlights,
+		updateHighlighterMenu: highlighter.updateHighlighterMenu,
+		removeExistingHighlights,
+		ensureHighlighterCSS: () => { ensureHighlighterCSS(); },
+	} satisfies highlighter.HighlighterAPI;
 
 	// Call updateHasHighlights when the page loads
 	window.addEventListener('load', updateHasHighlights);

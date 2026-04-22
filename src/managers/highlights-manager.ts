@@ -1,6 +1,9 @@
 import browser from "../utils/browser-polyfill";
 import { detectBrowser } from "../utils/browser-detection";
-import { AnyHighlightData } from "../utils/highlighter";
+import {
+	AnyHighlightData,
+	collapseGroupsForExport,
+} from "../utils/highlighter";
 import dayjs from "dayjs";
 import { getMessage } from "../utils/i18n";
 
@@ -11,11 +14,8 @@ export async function exportHighlights(): Promise<void> {
 
 		const exportData = Object.entries(allHighlights).map(([url, data]) => ({
 			url,
-			highlights: (data.highlights as AnyHighlightData[]).map(
-				(highlight) => ({
-					text: highlight.content,
-					timestamp: dayjs(parseInt(highlight.id)).toISOString(),
-				}),
+			highlights: collapseGroupsForExport(
+				data.highlights as AnyHighlightData[]
 			),
 		}));
 
