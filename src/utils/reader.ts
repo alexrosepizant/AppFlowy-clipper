@@ -3362,6 +3362,7 @@ export class Reader {
 
 		const iframe = doc.createElement("iframe");
 		iframe.id = iframeId;
+		iframe.allow = 'clipboard-write; web-share';
 		// Pass the article URL so the side panel can identify the page
 		// (tabs.get() can't see extension page URLs without the tabs permission)
 		iframe.src = browser.runtime.getURL(
