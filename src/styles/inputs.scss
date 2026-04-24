@@ -5,7 +5,8 @@ textarea {
 }
 input[type="password"],
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="url"] {
 	height: var(--input-height);
 	padding: 0 0.5rem;
 }
@@ -16,6 +17,7 @@ input::placeholder {
 input[type="password"],
 input[type="text"],
 input[type="email"],
+input[type="url"],
 textarea {
 	background: var(--background-modifier-form-field);
 	border: 1px solid var(--background-modifier-border);
