@@ -82,3 +82,16 @@ npm run test:watch  # watch mode
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## Dependencies
+
+- [webextension-polyfill](https://github.com/mozilla/webextension-polyfill) for browser compatibility
+- [defuddle](https://github.com/kepano/defuddle) for content extraction and Markdown conversion
+- [dayjs](https://github.com/iamkun/dayjs) for date parsing and formatting
+- [lz-string](https://github.com/pieroxy/lz-string) to compress templates to reduce storage space
+- [lucide](https://github.com/lucide-icons/lucide) for icons
+- [dompurify](https://github.com/cure53/DOMPurify) for sanitizing HTML
+
+## License
+
+Obsidian Web Clipper source code is open source under the MIT License. All trademarks, icons, marketing copy, and other marketing assets are excluded from that license.

@@ -65,6 +65,8 @@
 		AF3D6D4A2F8B297F004F2D8D /* highlights.js in Resources */ = {isa = PBXBuildFile; fileRef = AF3D6D422F8B297F004F2D8D /* highlights.js */; };
 		AF3D6D4B2F8B297F004F2D8D /* reader-page.js in Resources */ = {isa = PBXBuildFile; fileRef = AF3D6D442F8B297F004F2D8D /* reader-page.js */; };
 		AF3D6D4C2F8B297F004F2D8D /* reader.html in Resources */ = {isa = PBXBuildFile; fileRef = AF3D6D432F8B297F004F2D8D /* reader.html */; };
+		AF4F759B2F9C1AD80072BA9B /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = AF4F759A2F9C1AD80072BA9B /* AppIcon.icon */; };
+		AF4F759C2F9C1AD80072BA9B /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = AF4F759A2F9C1AD80072BA9B /* AppIcon.icon */; };
 		AFA233A52F63522E00F39577 /* flatten-shadow-dom.js in Resources */ = {isa = PBXBuildFile; fileRef = AFA233A42F63522E00F39577 /* flatten-shadow-dom.js */; };
 		AFA233A62F63522E00F39577 /* flatten-shadow-dom.js in Resources */ = {isa = PBXBuildFile; fileRef = AFA233A42F63522E00F39577 /* flatten-shadow-dom.js */; };
 		AFA233A72F63522E00F39577 /* flatten-shadow-dom.js in Resources */ = {isa = PBXBuildFile; fileRef = AFA233A42F63522E00F39577 /* flatten-shadow-dom.js */; };
@@ -154,7 +156,8 @@
 		AF3D6D412F8B297F004F2D8D /* highlights.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = highlights.html; path = ../../../dist_safari/highlights.html; sourceTree = "<group>"; };
 		AF3D6D422F8B297F004F2D8D /* highlights.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = highlights.js; path = ../../../dist_safari/highlights.js; sourceTree = "<group>"; };
 		AF3D6D432F8B297F004F2D8D /* reader.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = reader.html; path = ../../../dist_safari/reader.html; sourceTree = "<group>"; };
-		AF3D6D442F8B297F004F2D8D /* reader-page.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "reader-page.js"; path = ../../../dist_safari/reader-page.js; sourceTree = "<group>"; };
+		AF3D6D442F8B297F004F2D8D /* reader-page.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "reader-page.js"; path = "../../../dist_safari/reader-page.js"; sourceTree = "<group>"; };
+		AF4F759A2F9C1AD80072BA9B /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		AFA233A42F63522E00F39577 /* flatten-shadow-dom.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = "flatten-shadow-dom.js"; path = "../../../dist_safari/flatten-shadow-dom.js"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -207,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				7AEF05732CA0F50D005FFBC2 /* ViewController.swift */,
+				AF4F759A2F9C1AD80072BA9B /* AppIcon.icon */,
 				7AEF05742CA0F50D005FFBC2 /* Assets.xcassets */,
 				7AEF056D2CA0F50D005FFBC2 /* Resources */,
 			);
@@ -438,6 +442,7 @@
 			files = (
 				7AEF05AD2CA0F50D005FFBC2 /* Icon.png in Resources */,
 				7AEF05842CA0F50D005FFBC2 /* Base in Resources */,
+				AF4F759B2F9C1AD80072BA9B /* AppIcon.icon in Resources */,
 				7AEF05AB2CA0F50D005FFBC2 /* Base in Resources */,
 				7AEF05B12CA0F50D005FFBC2 /* Script.js in Resources */,
 				7AEF05B52CA0F50D005FFBC2 /* Assets.xcassets in Resources */,
@@ -456,6 +461,7 @@
 				7AEF05932CA0F50D005FFBC2 /* Base in Resources */,
 				AFA233A72F63522E00F39577 /* flatten-shadow-dom.js in Resources */,
 				7AEF05B22CA0F50D005FFBC2 /* Script.js in Resources */,
+				AF4F759C2F9C1AD80072BA9B /* AppIcon.icon in Resources */,
 				7AEF05B62CA0F50D005FFBC2 /* Assets.xcassets in Resources */,
 				7AEF05AC2CA0F50D005FFBC2 /* Base in Resources */,
 			);
@@ -845,7 +851,7 @@
 				CURRENT_PROJECT_VERSION = 55;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS (App)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Clipper for AppFlowy";
+				INFOPLIST_KEY_CFBundleDisplayName = "Clipper for AppFlowy"
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
